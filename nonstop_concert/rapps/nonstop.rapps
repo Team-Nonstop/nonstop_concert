@@ -1,0 +1,4 @@
+apps:
+  - nonstop_concert/map_sharing
+  - nonstop_concert/nav_demo
+  - nonstop_concert/turtlebot_nav_demo
