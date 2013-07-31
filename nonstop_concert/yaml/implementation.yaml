@@ -11,7 +11,7 @@ nodes:
     force_name_matching: true
   - id: robot
     tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
-    min: 0
+    min: 1 
     max: 2
     force_name_matching: true
   - id: multinav_database

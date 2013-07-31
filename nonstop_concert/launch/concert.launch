@@ -13,10 +13,13 @@
       <rosparam file="$(find nonstop_concert)/yaml/implementation.yaml" command="load"/>
       <param name="auto_start" value="true"/>
     </node>
+
+
+    <!-- ********************************** TF *********************************** -->
     <node pkg="rocon_tf_reconstructor" name="rocon_tf_reconstructor" type="rocon_tf_reconstructor">
     </node>
 
-    <!-- ********************************** TF *********************************** -->
+    <!-- ********************************* rviz ********************************* -->
     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find nonstop_concert)/rviz/multi_robot.rviz"/>
   </group>
 </launch>

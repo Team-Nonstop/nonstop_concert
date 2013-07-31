@@ -32,6 +32,6 @@
     <arg name="robot_icon" value="$(arg robot_icon)"/>
     <arg name="rapp_lists" value="$(arg rapp_lists)"/>
     <arg name="gateway_watch_loop_period" default="10"/>
-    <arg name="hub_whitelist" value="$(arg concert_name)" />
+<!--    <arg name="hub_whitelist" value="$(arg concert_name)" />-->
   </include>
 </launch>

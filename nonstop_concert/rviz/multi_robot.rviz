@@ -58,11 +58,11 @@ Visualization Manager:
         All Enabled: true
         map:
           Value: true
+        robot:
+          Value: true
         softbot:
           Value: true
         softbot1:
-          Value: true
-        softbot2:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -71,11 +71,11 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
+          robot:
+            {}
           softbot:
             {}
           softbot1:
-            {}
-          softbot2:
             {}
       Update Interval: 0
       Value: true
@@ -127,7 +127,7 @@ Visualization Manager:
       Shaft Length: 0.5
       Shaft Radius: 0.5
       Shape: Arrow
-      Topic: /softbot2/robot_pose
+      Topic: /robot/robot_pose
       Value: true
   Enabled: true
   Global Options:
@@ -155,15 +155,15 @@ Visualization Manager:
       Class: rviz/Orbit
       Distance: 31.9555
       Focal Point:
-        X: 6.12523
-        Y: 10.7378
-        Z: -0.131166
+        X: 10.4967
+        Y: 5.02757
+        Z: 0.260428
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.4948
+      Pitch: 1.0798
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.26359
+      Yaw: 0.755404
     Saved: ~
 Window Geometry:
   Displays:
@@ -181,5 +181,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1478
-  X: 241
-  Y: 115
+  X: -7
+  Y: 24
