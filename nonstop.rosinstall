@@ -12,4 +12,4 @@
 - git:
     uri: https://github.com/theRichu/nonstop_concert.git
     local-name: nonstop_concert
-    version: hydro-devel
+    version: groovy-devel

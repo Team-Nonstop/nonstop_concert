@@ -47,7 +47,6 @@
   <build_depend>rocon_apps</build_depend>
   <build_depend>rocon_utilities</build_depend>
   <build_depend>rospy</build_depend>
-  <build_depend>turtlebot_bringup</build_depend>
   <build_depend>zeroconf_avahi</build_depend>
   <build_depend>zeroconf_msgs</build_depend>
   <run_depend>concert_orchestra</run_depend>
@@ -60,7 +59,7 @@
   <run_depend>turtlebot_bringup</run_depend>
   <run_depend>zeroconf_avahi</run_depend>
   <run_depend>zeroconf_msgs</run_depend>
-
+  <run_depend>robot_pose_pubilsher</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

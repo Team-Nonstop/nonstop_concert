@@ -4,7 +4,7 @@ project(nonstop_concert)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS concert_conductor concert_orchestra gateway_msgs rocon_app_manager rocon_apps rocon_utilities rospy turtlebot_bringup zeroconf_avahi zeroconf_msgs)
+find_package(catkin REQUIRED COMPONENTS concert_conductor concert_orchestra gateway_msgs rocon_app_manager rocon_apps rocon_utilities rospy zeroconf_avahi zeroconf_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
