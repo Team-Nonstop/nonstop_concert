@@ -6,8 +6,8 @@
   <arg name="rapp_lists" default="$(optenv RAPP_LIST rocon_apps/rocon.rapps)"/>
   <arg name="robot_icon" default="turtlebot_bringup/turtlebot2.png"/>
   <arg name="gateway_watch_loop_period" default="1"/> <!-- Polling period for multimaster advertising/flipping -->
-  
-  <group ns="$(arg robot_name)">
+
+  <group ns="$(arg robot_name)">  
     <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
   </group>
 
