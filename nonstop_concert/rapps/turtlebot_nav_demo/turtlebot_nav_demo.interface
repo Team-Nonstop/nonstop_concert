@@ -3,7 +3,7 @@ subscribers:
   - map_metadata
   - move_base_simple/goal
   - initialpose
-publishers: 
+publishers:
   - robot_pose
   - camera/rgb/image_raw
 services: []

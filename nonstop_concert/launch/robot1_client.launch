@@ -14,5 +14,6 @@
     <arg name="rapp_lists" value="$(arg rapp_lists)"/>
     <arg name="gateway_watch_loop_period" value="1"/>
   </include>
+  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch"/>
 </group>
 </launch>
