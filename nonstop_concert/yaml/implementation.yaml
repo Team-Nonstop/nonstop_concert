@@ -4,19 +4,15 @@
 
 name: "Nonstop Concert"
 nodes:
-  - id: softbot
-    tuple: linux.ros.pc.nonstop_concert/nav_demo
-    min: 0
-    max: 4
-    force_name_matching: true
-#  - id: robot
-#    tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
-  - id: raison 
+  - id: robot 
     tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
+    force_name_matching: true
   - id: samsung 
     tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
+    force_name_matching: true
   - id: multinav_database
-    tuple: linux.ros.*.nonstop_concert/map_sharing
+    tuple: linux.ros.pc.nonstop_concert/map_sharing
+
 topics:
 
 # Shared Database
@@ -24,20 +20,6 @@ topics:
     type: nav_msgs/OccupancyGrid
   - id: shared_database_map_metadata
     type: nav_msgs/MapMetaData
-
-
-# Softbot
-  - id: softbot_pose
-    type: geometry_msgs/PoseStamped
-  - id: softbot_map
-    type: nav_msgs/OccupancyGrid
-  - id: softbot_map_metadata
-    type: nav_msgs/MapMetaData
-  - id: softbot_simple_goal
-    type: geometry_msgs/PoseStamped
-  - id: softbot_initialpose
-    type: geometry_msgs/PoseStamped
-
 # Turblebot-RAISON
   - id: raison_pose
     type: geometry_msgs/PoseStamped
@@ -49,7 +31,6 @@ topics:
     type: geometry_msgs/PoseStamped
   - id: raison_initialpose
     type: geometry_msgs/PoseStamped
-
 # Turtlebot-SAMSUNG
   - id: samsung_pose
     type: geometry_msgs/PoseStamped
@@ -63,16 +44,12 @@ topics:
     type: geometry_msgs/PoseStamped
 
 actions:
-  - id: softbot_movebase
-    type: move_base_msgs/MoveBase
   - id: raison_movebase
     type: move_base_msgs/MoveBase
-  - if: samsung_movebase
+  - id: samsung_movebase
     type: move_base_msgs/MoveBase
 
-
 edges:
-
 ## multinav database
   - start: multinav_database
     finish: multinav_database_map 
@@ -82,23 +59,6 @@ edges:
     finish: multinav_database_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
-
-  - start: softbot
-    finish: softbot_map
-    remap_from: map
-    remap_to: /map
-  - start: softbot
-    finish: softbot_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
-  - start: softbot
-    finish: softbot_simple_goal
-    remap_from: move_base_simple/goal
-    remap_to: goal_simple
-  - start: softbot
-    finish: softbot_initialpose
-    remap_from: initialpose
-    remap_to: /softbot/initialpose
 
   - start: raison
     finish: raison_map
@@ -133,4 +93,3 @@ edges:
     finish: samsung_initialpose
     remap_from: initialpose
     remap_to: /samsung/initialpose
-
