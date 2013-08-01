@@ -4,7 +4,7 @@
 
 name: "Nonstop Concert"
 nodes:
-  - id: robot 
+  - id: raison 
     tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
     force_name_matching: true
   - id: samsung 

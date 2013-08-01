@@ -4,7 +4,7 @@
     <arg name="concert_name" value="nonstop_concert"/>
     <arg name="rapp_lists" value="nonstop_concert/nonstop.rapps"/>
     <arg name="gateway_watch_loop_period" value="1"/>
-
+<group ns="$(arg robot_name)">
   <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /map odom 100" />
   
   <include file="$(find nonstop_concert)/launch/include/_turtlebot.launch">
@@ -14,4 +14,5 @@
     <arg name="rapp_lists" value="$(arg rapp_lists)"/>
     <arg name="gateway_watch_loop_period" value="1"/>
   </include>
+</group>
 </launch>
