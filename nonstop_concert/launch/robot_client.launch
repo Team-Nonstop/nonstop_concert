@@ -1,5 +1,5 @@
 <launch>
-    <arg name="robot_name" value="taeyeong"/>
+    <arg name="robot_name" value="samsung"/>
     <arg name="robot_type" value="turtlebot"/>
     <arg name="concert_name" value="nonstop_concert"/>
     <arg name="rapp_lists" value="nonstop_concert/nonstop.rapps"/>

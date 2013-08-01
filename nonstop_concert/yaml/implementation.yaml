@@ -9,11 +9,12 @@ nodes:
     min: 0
     max: 4
     force_name_matching: true
-  - id: robot
+#  - id: robot
+#    tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
+  - id: raison 
     tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
-    min: 1 
-    max: 2
-    force_name_matching: true
+  - id: samsung 
+    tuple: linux.ros.turtlebot.nonstop_concert/turtlebot_nav_demo
   - id: multinav_database
     tuple: linux.ros.*.nonstop_concert/map_sharing
 topics:
@@ -37,23 +38,38 @@ topics:
   - id: softbot_initialpose
     type: geometry_msgs/PoseStamped
 
-# Turblebot
-  - id: robot_pose
+# Turblebot-RAISON
+  - id: raison_pose
     type: geometry_msgs/PoseStamped
-  - id: robot_map
+  - id: raison_map
     type: nav_msgs/OccupancyGrid
-  - id: robot_map_metadata
+  - id: raison_map_metadata
     type: nav_msgs/MapMetaData
-  - id: robot_simple_goal
+  - id: raison_simple_goal
     type: geometry_msgs/PoseStamped
-  - id: robot_initialpose
+  - id: raison_initialpose
+    type: geometry_msgs/PoseStamped
+
+# Turtlebot-SAMSUNG
+  - id: samsung_pose
+    type: geometry_msgs/PoseStamped
+  - id: samsung_map
+    type: nav_msgs/OccupancyGrid
+  - id: samsung_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: samsung_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: samsung_initialpose
     type: geometry_msgs/PoseStamped
 
 actions:
   - id: softbot_movebase
     type: move_base_msgs/MoveBase
-  - id: robot_movebase
+  - id: raison_movebase
     type: move_base_msgs/MoveBase
+  - if: samsung_movebase
+    type: move_base_msgs/MoveBase
+
 
 edges:
 
@@ -84,19 +100,37 @@ edges:
     remap_from: initialpose
     remap_to: /softbot/initialpose
 
-  - start: robot
-    finish: robot_map
+  - start: raison
+    finish: raison_map
     remap_from: map
     remap_to: /map
-  - start: robot
-    finish: robot_map_metadata
+  - start: raison
+    finish: raison_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
-  - start: robot
-    finish: robot_simple_goal
+  - start: raison
+    finish: raison_simple_goal
     remap_from: move_base_simple/goal
     remap_to: goal_simple
-  - start: robot
-    finish: robot_initialpose
+  - start: raison
+    finish: raison_initialpose
     remap_from: initialpose
-    remap_to: /robot/initialpose
+    remap_to: /raison/initialpose
+
+  - start: samsung
+    finish: samsung_map
+    remap_from: map
+    remap_to: /map
+  - start: samsung
+    finish: samsung_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: samsung
+    finish: samsung_simple_goal
+    remap_from: move_base_simple/goal
+    remap_to: goal_simple
+  - start: samsung
+    finish: samsung_initialpose
+    remap_from: initialpose
+    remap_to: /samsung/initialpose
+
