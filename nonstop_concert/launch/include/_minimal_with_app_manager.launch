@@ -14,7 +14,7 @@
   <arg name="robot_icon" default="turtlebot_bringup/turtlebot2.png"/>
   <arg name="gateway_watch_loop_period" default="10"/> <!-- Polling period for multimaster advertising/flipping -->
 
-  <include file="$(find nonstop_concert)/launch/minimal.launch">
+  <include file="$(find nonstop_concert)/launch/include/_minimal.launch">
     <arg name="base" value="$(arg base)"/>
     <arg name="battery" value="$(arg battery)"/>
     <arg name="stacks" value="$(arg stacks)"/>
