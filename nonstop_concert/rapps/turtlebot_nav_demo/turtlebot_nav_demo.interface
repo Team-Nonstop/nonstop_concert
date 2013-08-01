@@ -5,6 +5,7 @@ subscribers:
   - initialpose
 publishers: 
   - robot_pose
+  - camera/rgb/image_raw
 services: []
 action_clients: []
 action_servers:
