@@ -1,5 +1,5 @@
 display: Turtlebot Navigation
 description: The boy navigates around the map. REAL version
 platform: linux.ros.turtlebot
-launch: nonstop_concert/turtlebot_nav_demo.launch
-interface: nonstop_concert/turtlebot_nav_demo.interface
+launch: nonstop_rapps/turtlebot_nav_demo.launch
+interface: nonstop_rapps/turtlebot_nav_demo.interface
