@@ -2,10 +2,20 @@
 #
 # Source installation instructions at:
 #
-# http://www.ros.org/wiki/turtlebot/Tutorials/hydro/Source%20Installation
 #
 ##############################################################################
 
+# Official Ros Stacks
+#{'setup-file': {'local-name': '/opt/ros/groovy/setup.sh'}},
+#{'other': {'local-name': '/opt/ros/groovy/share/ros'}},
+#{'other': {'local-name': '/opt/ros/groovy/share'}},
+#{'other': {'local-name': '/opt/ros/groovy/stacks'}},
+
+# Turtlebot for Nonstop
+- git:
+   uri: https://github.com/Team-Nonstop/turtlebot_nonstop.git
+   local-name: turtlebot_concert
+   version: hydro-devel
 
 # Nonstop stacks
 
