@@ -50,7 +50,7 @@
   <run_depend>turtlebot_nonstop_bringup</run_depend>
   <run_depend>zeroconf_avahi</run_depend>
   <run_depend>zeroconf_msgs</run_depend>
-  <run_depend>robot_pose_pubilsher</run_depend>
+  <run_depend>robot_pose_publisher</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
