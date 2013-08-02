@@ -7,6 +7,13 @@
 <group ns="$(arg robot_name)">
   <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /map odom 100" />
   
+  <!--  ****************** 3d sensor ******************  -->
+  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+    <arg name="rgb_processing" value="true"/>
+    <arg name="scan_processing" value="true"/>
+    <arg name="depth_processing" value="false"/>
+  </include>
+
   <include file="$(find turtlebot_nonstop_bringup)/launch/minimal_with_appmanager.launch">
     <arg name="robot_name" value="$(arg robot_name)"/>
     <arg name="robot_type" value="$(arg robot_type)"/>
@@ -14,6 +21,5 @@
     <arg name="rapp_lists" value="$(arg rapp_lists)"/>
     <arg name="gateway_watch_loop_period" value="1"/>
   </include>
-  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch"/>
 </group>
 </launch>
