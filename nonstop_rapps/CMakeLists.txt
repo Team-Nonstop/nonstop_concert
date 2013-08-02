@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(nonstop_clients)
+project(nonstop_rapps)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -50,7 +50,7 @@ find_package(catkin REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES nonstop_concert_clients
+#  LIBRARIES nonstop_rapps
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -64,19 +64,19 @@ catkin_package(
 # include_directories(include)
 
 ## Declare a cpp library
-# add_library(nonstop_concert_clients
-#   src/${PROJECT_NAME}/nonstop_concert_clients.cpp
+# add_library(nonstop_rapps
+#   src/${PROJECT_NAME}/nonstop_rapps.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(nonstop_concert_clients_node src/nonstop_concert_clients_node.cpp)
+# add_executable(nonstop_rapps_node src/nonstop_rapps_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(nonstop_concert_clients_node nonstop_concert_clients_generate_messages_cpp)
+# add_dependencies(nonstop_rapps_node nonstop_rapps_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(nonstop_concert_clients_node
+# target_link_libraries(nonstop_rapps_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -95,7 +95,7 @@ catkin_package(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS nonstop_concert_clients nonstop_concert_clients_node
+# install(TARGETS nonstop_rapps nonstop_rapps_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -120,7 +120,7 @@ catkin_package(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_nonstop_concert_clients.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_nonstop_rapps.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
