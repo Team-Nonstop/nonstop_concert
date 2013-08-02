@@ -14,7 +14,7 @@
 # Turtlebot for Nonstop
 - git:
    uri: https://github.com/Team-Nonstop/turtlebot_nonstop.git
-   local-name: turtlebot_concert
+   local-name: turtlebot_nonstop
    version: hydro-devel
 
 # Nonstop stacks
