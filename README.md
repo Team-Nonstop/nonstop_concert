@@ -3,12 +3,12 @@ Nonstop_concert
 
 Demo software
 
-
+http://www.ros.org/wiki/rocon_concert/Tutorials/groovy/Installation
 
 ## Groovy ##
 
-```
 Compile
+```
 mkdir ~/nonstop
 cd ~/nonstop
 wstool init src https://raw.github.com/theRichu/nonstop_concert/groovy-devel/nonstop.rosinstall
