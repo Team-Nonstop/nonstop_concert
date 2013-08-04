@@ -17,6 +17,11 @@
     local-name: ar_track_alvar
     version: groovy-devel
 
+- git: 
+    uri: https://github.com/Team-Nonstop/cereal_port.git
+    local-name: cereal_port
+    version: groovy-devel
+
 
 # Turtlebot for Nonstop
 - git:
