@@ -17,6 +17,7 @@
     local-name: ar_track_alvar
     version: groovy-devel
 
+#Nonstop Robots dependency
 - git: 
     uri: https://github.com/Team-Nonstop/cereal_port.git
     local-name: cereal_port
@@ -25,8 +26,8 @@
 
 # Turtlebot for Nonstop
 - git:
-   uri: https://github.com/Team-Nonstop/turtlebot_nonstop.git
-   local-name: turtlebot_nonstop
+   uri: https://github.com/Team-Nonstop/nonstop_robots.git
+   local-name: nonstop_robots
    version: hydro-devel
 
 # Nonstop stacks
