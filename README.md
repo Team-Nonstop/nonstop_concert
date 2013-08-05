@@ -3,10 +3,14 @@ Nonstop_concert
 
 Demo software
 
-Prerequsiton
+##Prerequsiton##
 
 http://www.ros.org/wiki/rocon_concert/Tutorials/groovy/Installation
+
+```
 sudo apt-get install ros-groovy-turtlebot
+```
+
 ## Groovy ##
 
 Compile
