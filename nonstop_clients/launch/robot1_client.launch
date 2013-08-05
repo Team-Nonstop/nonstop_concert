@@ -9,7 +9,7 @@
   <!-- TODO - MAKE NODE-->
   <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /map odom 100" />
   
-    <!--  ****************** 3d sensor ******************  -->
+  <!--  ****************** 3d sensor ******************  -->
   <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
     <arg name="rgb_processing" value="true"/>
     <arg name="scan_processing" value="true"/>
@@ -22,9 +22,8 @@
     <arg name="concert_name" value="$(arg concert_name)"/>
     <arg name="rapp_lists" value="$(arg rapp_lists)"/>
     <arg name="gateway_watch_loop_period" value="1"/>
-    <arg name="attached_marker" value="0"/>
+    <arg name="attached_marker" value="1"/>
     <arg name="safety_controller" value="1"/>
   </include>
-
 </group>
 </launch>

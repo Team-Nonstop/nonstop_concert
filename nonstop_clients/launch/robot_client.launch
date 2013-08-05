@@ -5,6 +5,7 @@
     <arg name="rapp_lists" value="nonstop_rapps/nonstop.rapps"/>
     <arg name="gateway_watch_loop_period" value="1"/>
 <group ns="$(arg robot_name)">
+  
   <!-- TODO - MAKE NODE-->
   <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /map odom 100" />
   
@@ -21,7 +22,7 @@
     <arg name="concert_name" value="$(arg concert_name)"/>
     <arg name="rapp_lists" value="$(arg rapp_lists)"/>
     <arg name="gateway_watch_loop_period" value="1"/>
-    <arg name="attached_marker" value="1"/>
+    <arg name="attached_marker" value="0"/>
     <arg name="safety_controller" value="1"/>
   </include>
 </group>
