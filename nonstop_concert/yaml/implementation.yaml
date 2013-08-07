@@ -35,8 +35,8 @@ topics:
     type: geometry_msgs/PoseStamped
   - id: raison_initialpose
     type: geometry_msgs/PoseStamped
-  - id: raison_image
-    type: sensor_msgs/Image
+#  - id: raison_image
+#    type: sensor_msgs/Image
 # Turtlebot-SAMSUNG
   - id: samsung_pose
     type: geometry_msgs/PoseStamped
@@ -82,10 +82,10 @@ edges:
     finish: raison_initialpose
     remap_from: initialpose
     remap_to: /raison/initialpose
-  - start: raison
-    finish: raison_image
-    remap_from: camera/rgb/image_raw
-    remap_to: /raison/camera/rgb/image_raw
+#  - start: raison
+#    finish: raison_image
+#    remap_from: camera/rgb/image_raw
+#    remap_to: /raison/camera/rgb/image_raw
 
   - start: samsung
     finish: samsung_map
