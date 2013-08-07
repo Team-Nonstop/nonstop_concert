@@ -33,6 +33,6 @@
 # Nonstop stacks
 
 - git:
-    uri: https://github.com/theRichu/nonstop_concert.git
+    uri: https://github.com/Team-Nonstop/nonstop_concert.git
     local-name: nonstop_concert
     version: groovy-devel
