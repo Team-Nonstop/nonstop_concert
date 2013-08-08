@@ -23,6 +23,11 @@
     local-name: cereal_port
     version: groovy-devel
 
+#Nonstop Robots Apps
+- git:
+    uri: https://github.com/Team-Nonstop/robot_pose_marker_publisher.git
+    local-name: robot_pose_marker_publisher
+    version: groovy-devel
 
 # Turtlebot for Nonstop
 - git:
@@ -31,7 +36,6 @@
    version: hydro-devel
 
 # Nonstop stacks
-
 - git:
     uri: https://github.com/Team-Nonstop/nonstop_concert.git
     local-name: nonstop_concert
