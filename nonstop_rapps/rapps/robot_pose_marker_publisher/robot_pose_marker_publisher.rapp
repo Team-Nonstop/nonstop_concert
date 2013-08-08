@@ -1,0 +1,5 @@
+display: Robot Pose Marker Publisher
+description: Robot Pose Recognized from Marker 
+platform: linux.ros.turtlebot
+launch: nonstop_rapps/robot_pose_marker_publisher.launch
+interface: nonstop_rapps/robot_pose_marker_publisher.interface

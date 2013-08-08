@@ -1,3 +1,4 @@
 apps:
   - nonstop_rapps/map_sharing
   - nonstop_rapps/turtlebot_nav_demo
+  - nonstop_rapps/robot_pose_marker_publisher
