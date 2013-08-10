@@ -23,11 +23,10 @@
     local-name: cereal_port
     version: groovy-devel
 
-#Nonstop Robots Apps
 - git:
-    uri: https://github.com/Team-Nonstop/robot_pose_marker_publisher.git
-    local-name: robot_pose_marker_publisher
-    version: groovy-devel
+    uri: https://github.com/ktossell/camera_umd.git
+    local-name: camara_umd
+    version: master
 
 # Turtlebot for Nonstop
 - git:

@@ -1,0 +1,9 @@
+subscribers: 
+  - map
+  - map_metadata
+  - robot_pose
+publishers: 
+  - coldeyes_pose_list
+services: []
+action_clients: []
+action_servers: []

@@ -5,25 +5,32 @@
 name: "Nonstop Concert"
 nodes:
   - id: raison 
-    tuple: linux.ros.turtlebot.nonstop_rapps/turtlebot_nav_demo
+    tuple: linux.ros.turtlebot.nonstop_rapps/sniperbot
     min: 0
     max: 1
     force_name_matching: true
   - id: samsung 
-    tuple: linux.ros.turtlebot.nonstop_rapps/turtlebot_nav_demo
+    tuple: linux.ros.turtlebot.nonstop_rapps/sniperbot
     min: 0 
+    max: 1
+    force_name_matching: true
+  - id: coldeyes
+    tuple: linux.ros.pc.nonstop_rapps/coldeyes
+    min: 1
     max: 1
     force_name_matching: true
   - id: multinav_database
     tuple: linux.ros.pc.nonstop_rapps/map_sharing
 
 topics:
-
 # Shared Database
   - id: shared_database_map
     type: nav_msgs/OccupancyGrid
   - id: shared_database_map_metadata
     type: nav_msgs/MapMetaData
+
+# Coldeyes
+
 # Turblebot-RAISON
   - id: raison_pose
     type: geometry_msgs/PoseStamped
