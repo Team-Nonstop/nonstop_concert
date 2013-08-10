@@ -8,7 +8,10 @@ Demo software
 http://www.ros.org/wiki/rocon_concert/Tutorials/groovy/Installation
 
 ```
-sudo apt-get install ros-groovy-turtlebot
+sudo apt-get install ros-groovy-turtlebot ros-groovy-turtlebot-apps ros-groovy-turtlebot-viz 
+> . /opt/ros/groovy/setup.bash
+> rosrun kobuki_ftdi create_udev_rules
+
 ```
 
 ## Groovy ##
