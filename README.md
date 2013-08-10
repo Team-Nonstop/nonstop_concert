@@ -20,7 +20,7 @@ Compile
 ```
 mkdir ~/nonstop
 cd ~/nonstop
-wstool init src https://raw.github.com/theRichu/nonstop_concert/groovy-devel/nonstop.rosinstall
+wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/groovy-devel/nonstop.rosinstall
 ```
 
 ```
@@ -53,7 +53,7 @@ rocon_launch nonstop_concert robot.launch
 ```
 mkdir ~/nonstop
 cd ~/nonstop
-wstool init src https://raw.github.com/theRichu/nonstop_concert/hydro-devel/nonstop.rosinstall
+wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/hydro-devel/nonstop.rosinstall
 
 source /opt/ros/hydro/setup.bash
 source ~/turtlebot/devel/setup.bash
