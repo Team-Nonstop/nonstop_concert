@@ -22,10 +22,10 @@
     local-name: rocon_app_platform
     version: hydro-devel
 
-- git:
-    uri: https://github.com/robotics-in-concert/rocon_msgs.git
-    local-name: rocon_msgs
-    version: hydro-devel
+#- git:
+#    uri: https://github.com/robotics-in-concert/rocon_msgs.git
+#    local-name: rocon_msgs
+#    version: hydro-devel
     
 # Catkinized packages
 - git:
@@ -34,17 +34,20 @@
     version: hydro-devel
 
 # Turtlebot dependency
+
+#Nonstop Robots dependency
+## Turtlebot_Nonstop
 - git: 
     uri: https://github.com/corot/ar_track_alvar.git
     local-name: ar_track_alvar
-    version: hydro-devel
+    version: groovy-devel
 
-#Nonstop Robots dependency
 ## LemonaBot
 - git: 
     uri: https://github.com/Team-Nonstop/cereal_port.git
     local-name: cereal_port
     version: groovy-devel
+
 ## Coldeyes
 - git:
     uri: https://github.com/ktossell/camera_umd.git
