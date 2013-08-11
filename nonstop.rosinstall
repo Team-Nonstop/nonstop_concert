@@ -11,6 +11,18 @@
 #{'other': {'local-name': '/opt/ros/groovy/share'}},
 #{'other': {'local-name': '/opt/ros/groovy/stacks'}},
 
+# Rocon packages
+- git:
+    uri: https://github.com/robotics-in-concert/rocon_concert.git
+    local-name: rocon_concert
+    version: hydro-devel
+
+- git:
+    uri: https://github.com/robotics-in-concert/rocon_app_platform.git
+    local-name: rocon_app_platform
+    version: hydro-devel
+
+
 # Catkinized packages
 - git:
     uri: https://github.com/Team-Nonstop/turtlebot.git
@@ -24,17 +36,19 @@
     version: groovy-devel
 
 #Nonstop Robots dependency
+## LemonaBot
 - git: 
     uri: https://github.com/Team-Nonstop/cereal_port.git
     local-name: cereal_port
     version: groovy-devel
-
+## Coldeyes
 - git:
     uri: https://github.com/ktossell/camera_umd.git
     local-name: camara_umd
     version: master
 
-# Turtlebot for Nonstop
+
+# Robots for Nonstop Concert
 - git:
    uri: https://github.com/Team-Nonstop/nonstop_robots.git
    local-name: nonstop_robots
