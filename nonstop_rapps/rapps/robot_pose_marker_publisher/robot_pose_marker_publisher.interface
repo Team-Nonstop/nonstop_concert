@@ -1,6 +1,0 @@
-subscribers: []
-publishers:
-  - robot_marker_pose
-services: []
-action_clients: []
-action_servers: []

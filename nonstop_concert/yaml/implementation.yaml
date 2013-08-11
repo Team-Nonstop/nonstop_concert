@@ -4,23 +4,20 @@
 
 name: "Nonstop Concert"
 nodes:
-  - id: raison 
-    tuple: linux.ros.turtlebot.nonstop_rapps/sniperbot
-    min: 0
+  - id: sniperbot 
+    tuple: linux.ros.sniperbot.nonstop_rapps/sniperbot
+    min: 1
+    max: 3
+  - id: watcher
+    tuple: linux.ros.coldeyes.nonstop_rapps/coldeyes
+    min: 1
     max: 1
-    force_name_matching: true
-  - id: samsung 
-    tuple: linux.ros.turtlebot.nonstop_rapps/sniperbot
-    min: 0 
-    max: 1
-    force_name_matching: true
-  - id: coldeyes
-    tuple: linux.ros.pc.nonstop_rapps/coldeyes
+  - id: multinav_database
+    tuple: linux.ros.pc.nonstop_rapps/map_sharing
     min: 1
     max: 1
     force_name_matching: true
-  - id: multinav_database
-    tuple: linux.ros.pc.nonstop_rapps/map_sharing
+
 
 topics:
 # Shared Database
@@ -31,35 +28,20 @@ topics:
 
 # Coldeyes
 
-# Turblebot-RAISON
-  - id: raison_pose
+# sniperbot
+  - id: sniperbot_pose
     type: geometry_msgs/PoseStamped
-  - id: raison_map
+  - id: sniperbot_map
     type: nav_msgs/OccupancyGrid
-  - id: raison_map_metadata
+  - id: sniperbot_map_metadata
     type: nav_msgs/MapMetaData
-  - id: raison_simple_goal
+  - id: sniperbot_simple_goal
     type: geometry_msgs/PoseStamped
-  - id: raison_initialpose
-    type: geometry_msgs/PoseStamped
-#  - id: raison_image
-#    type: sensor_msgs/Image
-# Turtlebot-SAMSUNG
-  - id: samsung_pose
-    type: geometry_msgs/PoseStamped
-  - id: samsung_map
-    type: nav_msgs/OccupancyGrid
-  - id: samsung_map_metadata
-    type: nav_msgs/MapMetaData
-  - id: samsung_simple_goal
-    type: geometry_msgs/PoseStamped
-  - id: samsung_initialpose
+  - id: sniperbot_initialpose
     type: geometry_msgs/PoseStamped
 
 actions:
-  - id: raison_movebase
-    type: move_base_msgs/MoveBase
-  - id: samsung_movebase
+  - id: sniperbot_movebase
     type: move_base_msgs/MoveBase
 
 edges:
@@ -73,40 +55,23 @@ edges:
     remap_from: map_metadata
     remap_to: /map_metadata
 
-  - start: raison
-    finish: raison_map
+  - start: sniperbot
+    finish: sniperbot_map
     remap_from: map
     remap_to: /map
-  - start: raison
-    finish: raison_map_metadata
+  - start: sniperbot
+    finish: sniperbot_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
-  - start: raison
-    finish: raison_simple_goal
+  - start: sniperbot
+    finish: sniperbot_simple_goal
     remap_from: move_base_simple/goal
     remap_to: goal_simple
-  - start: raison
-    finish: raison_initialpose
+  - start: sniperbot
+    finish: sniperbot_initialpose
     remap_from: initialpose
-    remap_to: /raison/initialpose
+    remap_to: /sniperbot/initialpose
 #  - start: raison
 #    finish: raison_image
 #    remap_from: camera/rgb/image_raw
 #    remap_to: /raison/camera/rgb/image_raw
-
-  - start: samsung
-    finish: samsung_map
-    remap_from: map
-    remap_to: /map
-  - start: samsung
-    finish: samsung_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
-  - start: samsung
-    finish: samsung_simple_goal
-    remap_from: move_base_simple/goal
-    remap_to: goal_simple
-  - start: samsung
-    finish: samsung_initialpose
-    remap_from: initialpose
-    remap_to: /samsung/initialpose

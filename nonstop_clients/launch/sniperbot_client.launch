@@ -1,0 +1,10 @@
+<launch>
+  <!-- Configuration set in environment -->
+  <include file="$(find sniperbot)/launch/sniperbot.launch">
+    <arg name="robot_name" value="sniper"/>
+    <arg name="robot_type" value="sniperbot"/>
+    <arg name="concert_name" value="nonstop_concert"/>
+    <arg name="rapp_lists" value="$(find nonstop_rapps)/rapps/nonstop.rapps"/>
+  </include>
+</launch>
+

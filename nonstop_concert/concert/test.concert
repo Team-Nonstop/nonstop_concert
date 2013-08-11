@@ -5,4 +5,5 @@
   <launch package="nonstop_clients" name="soft_navbot_client.launch" port="11314" />
 
   <launch package="nonstop_clients" name="robot_client.launch" port="11315" />
+  <launch package="nonstop_clients" name="coldeyes.launch" port="11316" />
 </concert>
