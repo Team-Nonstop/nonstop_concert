@@ -27,13 +27,12 @@ wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/groovy-devel
 Prerequsition
 ```
 sudo apt-get install ros-groovy-robot-pose-publisher ros-groovy-xacro ros-groovy-navigation
-
 source /opt/ros/groovy/setup.bash
-source ~/concert/devel/setup.sh
 ```
 
 Compile
 ```
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/nonstop/src/
 catkin_make
 cd build; sudo make install
 ```
