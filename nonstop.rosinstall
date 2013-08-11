@@ -31,7 +31,7 @@
 - git:
     uri: https://github.com/Team-Nonstop/turtlebot.git
     local-name: turtlebot
-    version: groovy 
+    version: hydro-devel
 
 # Turtlebot dependency
 - git: 
