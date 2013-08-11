@@ -11,6 +11,12 @@
 #{'other': {'local-name': '/opt/ros/groovy/share'}},
 #{'other': {'local-name': '/opt/ros/groovy/stacks'}},
 
+# Catkinized packages
+- git:
+    uri: https://github.com/Team-Nonstop/turtlebot.git
+    local-name: turtlebot
+    version: groovy 
+
 # Turtlebot dependency
 - git: 
     uri: https://github.com/corot/ar_track_alvar.git
