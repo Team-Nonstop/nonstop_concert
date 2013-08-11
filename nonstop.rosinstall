@@ -37,7 +37,7 @@
 - git: 
     uri: https://github.com/corot/ar_track_alvar.git
     local-name: ar_track_alvar
-    version: groovy-devel
+    version: hydro-devel
 
 #Nonstop Robots dependency
 ## LemonaBot
