@@ -1,6 +1,6 @@
 <launch>
   <!-- Configuration set in environment -->
-  <include file="$(find sniperbot)/launch/sniperbot.launch">
+  <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="sniper"/>
     <arg name="robot_type" value="sniperbot"/>
     <arg name="concert_name" value="nonstop_concert"/>
