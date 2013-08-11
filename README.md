@@ -3,20 +3,10 @@ Nonstop_concert
 
 Demo software
 
-##Prerequsiton##
-
-http://www.ros.org/wiki/rocon_concert/Tutorials/groovy/Installation
-
-```
-sudo apt-get install ros-groovy-turtlebot ros-groovy-turtlebot-apps ros-groovy-turtlebot-viz 
-> . /opt/ros/groovy/setup.bash
-> rosrun kobuki_ftdi create_udev_rules
-```
-
 
 ## Groovy ##
 
-Download
+# Download #
 ```
 mkdir ~/nonstop
 cd ~/nonstop
@@ -24,33 +14,38 @@ wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/groovy-devel
 ```
 
 
-Prerequsition
+# Prerequsition #
 ```
-sudo apt-get install ros-groovy-robot-pose-publisher ros-groovy-xacro ros-groovy-navigation
-source /opt/ros/groovy/setup.bash
+sudo apt-get install ros-groovy-robot-pose-publisher ros-groovy-navigation
+
 ```
 
-Compile
+# Compile #
 ```
+source /opt/ros/groovy/setup.bash
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/nonstop/src/
 catkin_make
 cd build; sudo make install
 ```
 
-
-### For Convinience ###
+# Before RUN #
 ```
-echo "source /opt/ros/groovy/setup.bash" >> ~/.bashrc
-echo "source ~/concert/devel/setup.sh" >> ~/.bashrc
-
-echo "export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/nonstop/src/" >> ~/.bashrc
+rosrun kobuki_ftdi create_udev_rules
+> source ~/nonstop/devel/setup.bash
 ```
 
-## Run ##
+# For Convinience #
+```
+echo "source ~/nonstop/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+# Run #
 ```
 rocon_launch nonstop_concert server.launch
-rocon_launch nonstop_concert robot.launch
 ```
+
+
 
 ## Hydro ##
 
