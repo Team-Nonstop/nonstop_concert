@@ -1,7 +1,6 @@
 subscribers: 
   - map
-  - map_metadata
-  - coldeyes_pose_list
+  - map_metadata 
 publishers: 
   - robot_pose
 services: []

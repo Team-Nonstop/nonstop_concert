@@ -1,7 +1,6 @@
 subscribers: 
   - map
   - map_metadata
-  - robot_pose
 publishers: []
 services: []
 action_clients: []

@@ -4,19 +4,21 @@
 
 name: "Nonstop Concert"
 nodes:
-  - id: sniperbot 
+  - id: sniper 
     tuple: linux.ros.sniperbot.nonstop_rapps/sniperbot
-    min: 1
+    min: 0
     max: 3
+    force_name_matching: true
   - id: watcher
     tuple: linux.ros.coldeyes.nonstop_rapps/coldeyes
     min: 1
     max: 1
-  - id: multinav_database
+    force_name_matching: true
+  - id: shared_database
     tuple: linux.ros.pc.nonstop_rapps/map_sharing
     min: 1
     max: 1
-    force_name_matching: true
+#    force_name_matching: true
 
 
 topics:
@@ -26,51 +28,68 @@ topics:
   - id: shared_database_map_metadata
     type: nav_msgs/MapMetaData
 
-# Coldeyes
-
-# sniperbot
-  - id: sniperbot_pose
+# watcher
+  - id: watcher_pose
     type: geometry_msgs/PoseStamped
-  - id: sniperbot_map
+  - id: watcher_map
     type: nav_msgs/OccupancyGrid
-  - id: sniperbot_map_metadata
+  - id: watcher_map_metadata
     type: nav_msgs/MapMetaData
-  - id: sniperbot_simple_goal
+
+# sniper
+  - id: sniper_pose
     type: geometry_msgs/PoseStamped
-  - id: sniperbot_initialpose
+  - id: sniper_map
+    type: nav_msgs/OccupancyGrid
+  - id: sniper_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: sniper_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: sniper_initialpose
     type: geometry_msgs/PoseStamped
 
 actions:
-  - id: sniperbot_movebase
+  - id: sniper_movebase
     type: move_base_msgs/MoveBase
 
 edges:
+
 ## multinav database
-  - start: multinav_database
-    finish: multinav_database_map 
+  - start: shared_database
+    finish: shared_database_map 
     remap_from: map
     remap_to: /map
-  - start: multinav_database
-    finish: multinav_database_map_metadata
+  - start: shared_database
+    finish: shared_database_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
 
-  - start: sniperbot
+  - start: watcher
+    finish: watcher_map
+    remap_from: map
+    remap_to: /map
+  - start: watcher
+    finish: watcher_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+
+
+  - start: sniper
     finish: sniperbot_map
     remap_from: map
     remap_to: /map
-  - start: sniperbot
+  - start: sniper
     finish: sniperbot_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
-  - start: sniperbot
+  - start: sniper
     finish: sniperbot_simple_goal
     remap_from: move_base_simple/goal
     remap_to: goal_simple
-  - start: sniperbot
+  - start: sniper
     finish: sniperbot_initialpose
     remap_from: initialpose
-    remap_to: /sniperbot/initialpose
+    remap_to: /sniper/initialpose
 #  - start: raison
 #    finish: raison_image
 #    remap_from: camera/rgb/image_raw
