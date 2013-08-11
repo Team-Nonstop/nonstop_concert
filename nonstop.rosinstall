@@ -26,6 +26,7 @@
     uri: https://github.com/robotics-in-concert/rocon_msgs.git
     local-name: rocon_msgs
     version: hydro-devel
+
 - git: 
     uri: https://github.com/robotics-in-concert/rocon_multimaster.git
     local-name: rocon_multimaster
@@ -39,7 +40,7 @@
 
 # Turtlebot dependency
 - git: 
-    uri: 'https://github.com/ros/xacro.git
+    uri: https://github.com/ros/xacro.git
     local-name: xacro
     version: hydro-devel
 
