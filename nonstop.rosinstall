@@ -26,7 +26,11 @@
     uri: https://github.com/robotics-in-concert/rocon_msgs.git
     local-name: rocon_msgs
     version: hydro-devel
-    
+- git: 
+    uri: https://github.com/robotics-in-concert/rocon_multimaster.git
+    local-name: rocon_multimaster
+    version: hydro-devel
+
 # Catkinized packages
 - git:
     uri: https://github.com/Team-Nonstop/turtlebot.git
@@ -34,6 +38,10 @@
     version: hydro-devel
 
 # Turtlebot dependency
+- git: 
+    uri: 'https://github.com/ros/xacro.git
+    local-name: xacro
+    version: hydro-devel
 
 #Nonstop Robots dependency
 ## Turtlebot_Nonstop
