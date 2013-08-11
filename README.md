@@ -11,23 +11,28 @@ http://www.ros.org/wiki/rocon_concert/Tutorials/groovy/Installation
 sudo apt-get install ros-groovy-turtlebot ros-groovy-turtlebot-apps ros-groovy-turtlebot-viz 
 > . /opt/ros/groovy/setup.bash
 > rosrun kobuki_ftdi create_udev_rules
-
 ```
+
 
 ## Groovy ##
 
-Compile
+Download
 ```
 mkdir ~/nonstop
 cd ~/nonstop
-wstool init src https://raw.github.com/theRichu/nonstop_concert/groovy-devel/nonstop.rosinstall
+wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/groovy-devel/nonstop.rosinstall
 ```
 
+
+Prerequsition
 ```
+sudo apt-get install ros-groovy-robot-pose-publisher ros-groovy-xacro ros-groovy-navigation
+
 source /opt/ros/groovy/setup.bash
 source ~/concert/devel/setup.sh
 ```
 
+Compile
 ```
 catkin_make
 cd build; sudo make install
@@ -53,7 +58,7 @@ rocon_launch nonstop_concert robot.launch
 ```
 mkdir ~/nonstop
 cd ~/nonstop
-wstool init src https://raw.github.com/theRichu/nonstop_concert/hydro-devel/nonstop.rosinstall
+wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/hydro-devel/nonstop.rosinstall
 
 source /opt/ros/hydro/setup.bash
 source ~/turtlebot/devel/setup.bash
