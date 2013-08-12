@@ -13,6 +13,7 @@ nodes:
     tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/turtlebot_nonstop
     min: 0
     max: 2
+
   - id: watcher
     tuple: linux.ros.coldeyes.nonstop_rapps/coldeyes
     min: 1
@@ -40,7 +41,6 @@ topics:
   - id: watcher_map_metadata
     type: nav_msgs/MapMetaData
 
-
 # stroller
   - id: stroller_pose
     type: geometry_msgs/PoseStamped
@@ -52,8 +52,6 @@ topics:
     type: geometry_msgs/PoseStamped
   - id: stroller_initialpose
     type: geometry_msgs/PoseStamped
-
-
 
 # sniper
   - id: sniper_pose
@@ -68,6 +66,8 @@ topics:
     type: geometry_msgs/PoseStamped
 
 actions:
+  - id: stroller_movebase
+    type: move_base_msgs/MoveBase
   - id: sniper_movebase
     type: move_base_msgs/MoveBase
 
@@ -102,36 +102,36 @@ edges:
 
 
   - start: stroller
-    finish: sniperbot_map
+    finish: stroller_map
     remap_from: map
     remap_to: /map
   - start: stroller
-    finish: sniperbot_map_metadata
+    finish: stroller_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
   - start: stroller
-    finish: sniperbot_simple_goal
+    finish: stroller_simple_goal
     remap_from: move_base_simple/goal
-    remap_to: goal_simple
+    remap_to: /stroller/goal_simple
   - start: stroller
-    finish: sniperbot_initialpose
+    finish: stroller_initialpose
     remap_from: initialpose
     remap_to: /stroller/initialpose
 
 
   - start: sniper
-    finish: sniperbot_map
+    finish: sniper_map
     remap_from: map
     remap_to: /map
   - start: sniper
-    finish: sniperbot_map_metadata
+    finish: sniper_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
   - start: sniper
-    finish: sniperbot_simple_goal
+    finish: sniper_simple_goal
     remap_from: move_base_simple/goal
     remap_to: goal_simple
   - start: sniper
-    finish: sniperbot_initialpose
+    finish: sniper_initialpose
     remap_from: initialpose
     remap_to: /sniper/initialpose
