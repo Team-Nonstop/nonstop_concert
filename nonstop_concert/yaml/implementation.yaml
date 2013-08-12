@@ -8,7 +8,7 @@ nodes:
     tuple: linux.ros.sniperbot.nonstop_rapps/sniperbot
     min: 0
     max: 3
-    force_name_matching: true
+
   - id: watcher
     tuple: linux.ros.coldeyes.nonstop_rapps/coldeyes
     min: 1
@@ -81,14 +81,6 @@ edges:
     finish: watcher_front
     remap_from: front/image_raw
     remap_to: /watcher/front/image_raw
-  - start: watcher
-    finish: watcher_ar_track_alvar
-    remap_from: ar_track_alvar/parameter_descriptions
-    remap_to: /watcher/ar_track_alvar/parameter_descriptions
-  - start: watcher
-    finish: watcher_ar_track_alvar
-    remap_from: ar_track_alvar/parameter_updates
-    remap_to: /watcher/ar_track_alvar/parameter_updates
 
 
   - start: sniper
