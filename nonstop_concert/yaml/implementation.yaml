@@ -95,11 +95,11 @@ edges:
   - start: watcher
     finish: watcher_ar_pose_marker
     remap_from: ar_pose_marker
-    remap_to: /watcher/ar_pose_marker
+    remap_to: ar_pose_marker
   - start: watcher
     finish: watcher_front
     remap_from: front/image_raw
-    remap_to: /watcher/front/image_raw
+    remap_to: front/image_raw
 
 
   - start: stroller
@@ -113,11 +113,11 @@ edges:
   - start: stroller
     finish: stroller_simple_goal
     remap_from: move_base_simple/goal
-    remap_to: /stroller/goal_simple
+    remap_to: goal_simple
   - start: stroller
     finish: stroller_initialpose
     remap_from: initialpose
-    remap_to: /stroller/initialpose
+    remap_to: initialpose
 
 
   - start: sniper
@@ -135,4 +135,4 @@ edges:
   - start: sniper
     finish: sniper_initialpose
     remap_from: initialpose
-    remap_to: /sniper/initialpose
+    remap_to: initialpose
