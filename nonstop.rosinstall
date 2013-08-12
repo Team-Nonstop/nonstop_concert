@@ -47,7 +47,7 @@
 #Nonstop Robots dependency
 ## Turtlebot_Nonstop
 - git: 
-    uri: https://github.com/carot/ar_track_alvar.git
+    uri: https://github.com/corot/ar_track_alvar.git
     local-name: ar_track_alvar
     version: groovy-devel
 - git:
