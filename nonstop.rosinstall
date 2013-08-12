@@ -53,7 +53,7 @@
 - git:
     uri: http://github.com/Team-Nonstop/navigation.git
     local-name: navigation
-    version: hydro-devel
+    version: groovy-devel-catkinized
 
 ## LemonaBot
 - git: 
