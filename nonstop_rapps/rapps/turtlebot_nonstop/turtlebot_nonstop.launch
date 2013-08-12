@@ -4,7 +4,7 @@
   <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher">
     <rosparam>
       is_stamped: true
-<!--      map_frame: odom-->
+      map_frame: odom
       base_frame: base_link
     </rosparam>
   </node>

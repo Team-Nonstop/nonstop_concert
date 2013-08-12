@@ -6,7 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
+        - /TF1/Status1
         - /Pose1
+        - /Pose2
         - /Image1
       Splitter Ratio: 0.5
     Tree Height: 538
@@ -55,6 +58,8 @@ Visualization Manager:
       Frames:
         /map:
           Value: true
+        /stroller:
+          Value: true
         /watcher:
           Value: true
         All Enabled: true
@@ -65,6 +70,8 @@ Visualization Manager:
       Show Names: true
       Tree:
         /map:
+          /stroller:
+            {}
           /watcher:
             {}
       Update Interval: 0
@@ -95,15 +102,15 @@ Visualization Manager:
       Axes Radius: 0.1
       Class: rviz/Pose
       Color: 0; 255; 21
-      Enabled: false
+      Enabled: true
       Head Length: 0.5
       Head Radius: 0.5
       Name: Pose
       Shaft Length: 0.5
       Shaft Radius: 0.5
       Shape: Arrow
-      Topic: /raison/robot_pose
-      Value: false
+      Topic: /stroller/robot_pose
+      Value: true
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.1
@@ -142,24 +149,24 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
-      Topic: /watcher/initialpose
+      Topic: /stroller/initialpose
     - Class: rviz/SetGoal
-      Topic: /samsung/goal_simple
+      Topic: /stroller/goal_simple
   Value: true
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.50704
+      Distance: 6.97019
       Focal Point:
-        X: 1.50516
-        Y: 0.263766
-        Z: -0.0431771
+        X: 0.688887
+        Y: -0.941121
+        Z: 0.327483
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.686889
+      Pitch: 0.771889
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.45564
+      Yaw: 2.29564
     Saved: ~
 Window Geometry:
   Displays:

@@ -10,7 +10,7 @@ nodes:
     max: 3
 
   - id: stroller 
-    tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/turtlebot_nonstop
+    tuple: linux.ros.turtlebot_nonstop.turtlebot_nonstop_rapps/navigation
     min: 0
     max: 2
 
