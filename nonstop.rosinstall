@@ -47,9 +47,13 @@
 #Nonstop Robots dependency
 ## Turtlebot_Nonstop
 - git: 
-    uri: https://github.com/corot/ar_track_alvar.git
+    uri: https://github.com/Team-Nonstop/ar_track_alvar.git
     local-name: ar_track_alvar
     version: groovy-devel
+- git:
+    uri: http://github.com/Team-Nonstop/navigation.git
+    local-name: navigation
+    version: hydro-devel
 
 ## LemonaBot
 - git: 
@@ -59,7 +63,7 @@
 
 ## Coldeyes
 - git:
-    uri: https://github.com/ktossell/camera_umd.git
+    uri: https://github.com/Team-Nonstop/camera_umd.git
     local-name: camara_umd
     version: master
 
