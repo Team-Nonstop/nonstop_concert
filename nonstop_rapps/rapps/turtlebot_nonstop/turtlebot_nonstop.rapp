@@ -1,0 +1,5 @@
+display: Turtlebot_Nonstop Navigation
+description: The boy navigates around the map. REAL version
+platform: linux.ros.turtlebot_nonstop
+launch: nonstop_rapps/turtlebot_nonstop.launch
+interface: nonstop_rapps/turtlebot_nonstop.interface
