@@ -6,10 +6,10 @@
 ##############################################################################
 
 # Official Ros Stacks
-#{'setup-file': {'local-name': '/opt/ros/groovy/setup.sh'}},
-#{'other': {'local-name': '/opt/ros/groovy/share/ros'}},
-#{'other': {'local-name': '/opt/ros/groovy/share'}},
-#{'other': {'local-name': '/opt/ros/groovy/stacks'}},
+# {'setup-file': {'local-name': '/opt/ros/groovy/setup.sh'}},
+# {'other': {'local-name': '/opt/ros/groovy/share/ros'}},
+# {'other': {'local-name': '/opt/ros/groovy/share'}},
+# {'other': {'local-name': '/opt/ros/groovy/stacks'}},
 
 # Rocon packages
 - git:
