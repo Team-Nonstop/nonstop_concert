@@ -11,7 +11,7 @@ nodes:
 
   - id: stroller 
     tuple: linux.ros.turtlebot_nonstop.turtlebot_nonstop_rapps/navigation
-    min: 0
+    min: 2
     max: 2
 
   - id: watcher
@@ -113,7 +113,7 @@ edges:
   - start: stroller
     finish: stroller_simple_goal
     remap_from: move_base_simple/goal
-    remap_to: /goal_simple
+    remap_to: /stroller/goal_simple
   - start: stroller
     finish: stroller_initialpose
     remap_from: initialpose

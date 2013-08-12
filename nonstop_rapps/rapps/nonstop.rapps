@@ -1,5 +1,5 @@
 apps:
   - nonstop_rapps/map_sharing
-  - nonstop_rapps/sniperbot
+ # - nonstop_rapps/sniperbot
   - nonstop_rapps/coldeyes
-  - nonstop_rapps/turtlebot_nonstop
+ # - nonstop_rapps/turtlebot_nonstop
