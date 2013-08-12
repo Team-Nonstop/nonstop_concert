@@ -5,8 +5,6 @@ publishers:
   - ar_pose_marker
   - robot_pose
   - front/image_raw
-  - ar_track_alvar/parameter_descriptions
-  - ar_track_alvar/parameter_updates
 services: []
 action_clients: []
 action_servers: []
