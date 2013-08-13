@@ -32,6 +32,7 @@
     local-name: rocon_multimaster
     version: hydro-devel
 
+
 # Catkinized packages
 - git:
     uri: https://github.com/Team-Nonstop/turtlebot.git
@@ -50,6 +51,7 @@
     uri: https://github.com/corot/ar_track_alvar.git
     local-name: ar_track_alvar
     version: groovy-devel
+    
 - git:
     uri: http://github.com/Team-Nonstop/navigation.git
     local-name: navigation
@@ -67,14 +69,19 @@
     local-name: camara_umd
     version: master
 
-
-# Robots for Nonstop Concert
+# Robots Stack for Nonstop Concert
 - git:
    uri: https://github.com/Team-Nonstop/nonstop_robots.git
    local-name: nonstop_robots
    version: hydro-devel
 
-# Nonstop stacks
+# Nonstop-Concert dependency
+- git:
+   uri: https://github.com/Team-Nonstop/marker_localization.git
+   local-name: marker_localization
+   version: hydro-devel
+   
+# Nonstop-Concert stacks
 - git:
     uri: https://github.com/Team-Nonstop/nonstop_concert.git
     local-name: nonstop_concert
