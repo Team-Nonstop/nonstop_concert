@@ -7,10 +7,11 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1
-        - /TF1/Status1
         - /Pose1
         - /Pose2
+        - /Pose3
         - /Image1
+        - /PoseArray1
       Splitter Ratio: 0.5
     Tree Height: 538
   - Class: rviz/Selection
@@ -116,15 +117,15 @@ Visualization Manager:
       Axes Radius: 0.1
       Class: rviz/Pose
       Color: 255; 25; 0
-      Enabled: false
+      Enabled: true
       Head Length: 0.5
       Head Radius: 0.5
       Name: Pose
       Shaft Length: 1
       Shaft Radius: 0.5
       Shape: Arrow
-      Topic: /softbot/robot_pose
-      Value: false
+      Topic: /stroller1/robot_pose
+      Value: true
     - Class: rviz/Image
       Enabled: true
       Image Topic: /watcher/front/image_raw
@@ -135,6 +136,13 @@ Visualization Manager:
       Normalize Range: true
       Queue Size: 2
       Transport Hint: raw
+      Value: true
+    - Arrow Length: 0.3
+      Class: rviz/PoseArray
+      Color: 255; 25; 0
+      Enabled: true
+      Name: PoseArray
+      Topic: ""
       Value: true
   Enabled: true
   Global Options:
@@ -156,17 +164,17 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.97019
+      Distance: 9.40577
       Focal Point:
-        X: 0.688887
-        Y: -0.941121
-        Z: 0.327483
+        X: 0.405029
+        Y: -1.71003
+        Z: 0.602794
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.771889
+      Pitch: 1.05689
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.29564
+      Yaw: 2.15064
     Saved: ~
 Window Geometry:
   Displays:
@@ -186,5 +194,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1680
-  X: 1366
+  X: 1801
   Y: 24
