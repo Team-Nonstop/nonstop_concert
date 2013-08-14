@@ -20,6 +20,12 @@ nodes:
     max: 1
     force_name_matching: true
 
+  - id: supervisor
+    tuple: linux.ros.markerserver.nonstop_rapps/marker_localization
+    min: 1
+    max: 1
+    force_name_matching: true
+
   - id: shared_database
     tuple: linux.ros.pc.nonstop_rapps/map_sharing
     min: 1
@@ -43,6 +49,18 @@ topics:
     type: nav_msgs/MapMetaData
   - id: watcher_visualization_marker
     type: visualization_msgs/Marker
+
+# supervisor
+  - id: supervisor_pose
+    type: geometry_msgs/PoseStamped
+  - id: supervisor_map
+    type: nav_msgs/OccupancyGrid
+  - id: supervisor_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: supervisor_visualization_marker
+    type: visualization_msgs/Marker
+  - id: supervisor_estimate_pose
+    type: geometry_msgs/PoseWithCovarianceStamped
 
 # stroller
   - id: stroller_pose
@@ -106,6 +124,25 @@ edges:
     finish: watcher_front
     remap_from: front/image_raw
     remap_to: front/image_raw
+
+
+  - start: supervisor
+    finish: supervisor_map
+    remap_from: map
+    remap_to: /map
+  - start: supervisor
+    finish: supervisor_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: supervisor
+    finish: supervisor_estimate_pose
+    remap_from: estimate_pose
+    remap_to: supervisor_estimate_pose
+  - start: supervisor
+    finish: supervisor_front
+    remap_from: front/image_raw
+    remap_to: front/image_raw
+
 
 
   - start: stroller

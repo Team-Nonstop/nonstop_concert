@@ -12,6 +12,7 @@ Panels:
         - /Pose3
         - /Image1
         - /PoseArray1
+        - /Marker1
       Splitter Ratio: 0.5
     Tree Height: 538
   - Class: rviz/Selection
@@ -57,9 +58,9 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        /map:
+        /camera_front:
           Value: true
-        /stroller:
+        /map:
           Value: true
         /watcher:
           Value: true
@@ -71,10 +72,9 @@ Visualization Manager:
       Show Names: true
       Tree:
         /map:
-          /stroller:
-            {}
           /watcher:
-            {}
+            /camera_front:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 0.7
@@ -144,6 +144,14 @@ Visualization Manager:
       Name: PoseArray
       Topic: ""
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /watcher/visualization_marker
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -171,10 +179,10 @@ Visualization Manager:
         Z: 0.602794
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.05689
+      Pitch: 0.36689
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.15064
+      Yaw: 1.63564
     Saved: ~
 Window Geometry:
   Displays:
@@ -194,5 +202,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1680
-  X: 1801
+  X: 1359
   Y: 24
