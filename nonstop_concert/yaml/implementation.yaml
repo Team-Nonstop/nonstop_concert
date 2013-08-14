@@ -41,8 +41,8 @@ topics:
     type: nav_msgs/OccupancyGrid
   - id: watcher_map_metadata
     type: nav_msgs/MapMetaData
-  - id: watcher_ar_track_alvar
-    type: ar_track_alvar/AlvarMarkers
+  - id: watcher_visualization_marker
+    type: visualization_msgs/Marker
 
 # stroller
   - id: stroller_pose
@@ -99,9 +99,9 @@ edges:
     remap_from: map_metadata
     remap_to: /map_metadata
   - start: watcher
-    finish: watcher_ar_track_alvar
-    remap_from: ar_track_alvar
-    remap_to: ar_track_alvar
+    finish: watcher_visualization_marker
+    remap_from: visualization_marker
+    remap_to: visualization_marker
   - start: watcher
     finish: watcher_front
     remap_from: front/image_raw

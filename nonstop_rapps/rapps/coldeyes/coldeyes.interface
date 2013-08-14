@@ -2,7 +2,7 @@ subscribers:
   - map
   - map_metadata
 publishers: 
-  - ar_pose_marker
+  - visualization_marker
   - robot_pose
   - front/image_raw
 services: []
