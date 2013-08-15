@@ -56,15 +56,15 @@ topics:
     type: visualization_msgs/Marker
 
 # supervisor
-  - id: supervisor_pose
-    type: geometry_msgs/PoseStamped
-  - id: supervisor_map
-    type: nav_msgs/OccupancyGrid
-  - id: supervisor_map_metadata
-    type: nav_msgs/MapMetaData
+  #- id: supervisor_map
+  #  type: nav_msgs/OccupancyGrid
+  #- id: supervisor_map_metadata
+  #  type: nav_msgs/MapMetaData
   - id: supervisor_visualization_marker
     type: visualization_msgs/Marker
-  - id: supervisor_estimate_pose
+  - id: supervisor_stroller_pose
+    type: geometry_msgs/PoseWithCovarianceStamped
+  - id: supervisor_softstroller_pose
     type: geometry_msgs/PoseWithCovarianceStamped
 
 # stroller
@@ -140,12 +140,11 @@ edges:
   - start: watcher
     finish: watcher_visualization_marker
     remap_from: visualization_marker
-    remap_to: visualization_marker
+    remap_to: /visualization_marker
   - start: watcher
     finish: watcher_front
     remap_from: front/image_raw
     remap_to: front/image_raw
-
 
   - start: supervisor
     finish: supervisor_map
@@ -156,14 +155,17 @@ edges:
     remap_from: map_metadata
     remap_to: /map_metadata
   - start: supervisor
-    finish: supervisor_estimate_pose
-    remap_from: estimate_pose
-    remap_to: supervisor_estimate_pose
+    finish: supervisor_visualization_marker
+    remap_from: visualization_marker
+    remap_to: /visualization_marker
   - start: supervisor
-    finish: supervisor_front
-    remap_from: front/image_raw
-    remap_to: front/image_raw
-
+    finish: supervisor_stroller_pose
+    remap_from: stroller_pose
+    remap_to: /stroller/initialpose
+  - start: supervisor
+    finish: supervisor_softstroller_pose
+    remap_from: softstroller_pose
+    remap_to: /softstroller/initialpose
 
 
   - start: stroller

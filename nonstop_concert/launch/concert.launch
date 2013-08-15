@@ -46,9 +46,6 @@
     </group> 
 
 
-
-
-
     <group ns="stroller">
         <arg name="attached_marker" value="0"/>
         <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
@@ -63,15 +60,6 @@
           <param name="publish_frequency" type="double" value="5.0" />
         </node>
     </group> 
-
-
-
-
-
-
-
-
-
 
     
     <group ns="softstroller">

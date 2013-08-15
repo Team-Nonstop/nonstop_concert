@@ -1,11 +1,11 @@
 subscribers:
-  - map
-  - map_metadata
+#  - map
+#  - map_metadata
   - visualization_marker
-  - visualization_marker_array
+#  - visualization_marker_array
 publishers:
-  - robot_pose
-  - estimated_pose
+  - stroller_pose
+  - softstroller_pose
 services: []
 action_clients: []
 action_servers: []
