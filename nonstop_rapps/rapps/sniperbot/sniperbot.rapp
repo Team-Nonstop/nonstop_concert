@@ -1,5 +1,0 @@
-display: Sniperbot
-description: The Sniperbot navigate 
-platform: linux.ros.sniperbot
-launch: nonstop_rapps/sniperbot.launch
-interface: nonstop_rapps/sniperbot.interface

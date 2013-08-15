@@ -182,24 +182,6 @@ edges:
     remap_to: initialpose
 
 
-  - start: softstroller
-    finish: softstroller_map
-    remap_from: map
-    remap_to: /map
-  - start: softstroller
-    finish: softstroller_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
-  - start: softstroller
-    finish: softstroller_simple_goal
-    remap_from: move_base_simple/goal
-    remap_to: goal_simple
-  - start: softstroller
-    finish: softstroller_initialpose
-    remap_from: initialpose
-    remap_to: initialpose
-
-
 
   - start: sniper
     finish: sniper_map

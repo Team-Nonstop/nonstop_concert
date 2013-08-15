@@ -1,3 +1,4 @@
 apps:
   - nonstop_rapps/map_sharing
   - nonstop_rapps/marker_localization
+  - nonstop_rapps/turtlebot_nonstop_soft

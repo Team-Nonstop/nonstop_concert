@@ -1,4 +1,5 @@
 <launch>
+  <include file="$(find coldeyes_bringup)/launch/bootstrap.launch"/>
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="watcher"/>
     <arg name="robot_type" value="coldeyes"/>
