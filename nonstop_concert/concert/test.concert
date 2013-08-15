@@ -1,9 +1,7 @@
 <concert>
   <launch package="nonstop_concert" name="concert.launch" port="11311" />
   <launch package="nonstop_clients" name="multinav_database_client.launch" port="11312" />
-  <launch package="nonstop_clients" name="soft_navbot_client.launch" port="11313" />
-  <launch package="nonstop_clients" name="soft_navbot_client.launch" port="11314" />
-
-  <launch package="nonstop_clients" name="robot_client.launch" port="11315" />
-  <launch package="nonstop_clients" name="coldeyes.launch" port="11316" />
+  <launch package="nonstop_clients" name="marker_server.launch" port="11313" />
+  <launch package="nonstop_clients" name="turtlebot_nonstop_soft_client.launch" port="11314"/>
+  <launch package-"nonstop_clients" name="coldeyes.launch" port="11315" />
 </concert>
