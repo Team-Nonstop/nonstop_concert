@@ -23,7 +23,7 @@ nodes:
     tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
     min: 1
     max: 1
-    force_name_matching: true
+#    force_name_matching: true
 
   - id: supervisor
     tuple: linux.ros.markerserver.nonstop_rapps/marker_localization
@@ -113,6 +113,8 @@ actions:
   - id: stroller_movebase
     type: move_base_msgs/MoveBase
   - id: sniper_movebase
+    type: move_base_msgs/MoveBase
+  - id: softstroller_movebase
     type: move_base_msgs/MoveBase
 
 edges:
