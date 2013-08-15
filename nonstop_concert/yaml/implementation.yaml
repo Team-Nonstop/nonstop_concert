@@ -1,4 +1,4 @@
-# Concert client tuples are of the platform-system-robot-name-app where
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               # Concert client tuples are of the platform-system-robot-name-app where
 # the name is just a placemarker for the eventual concert client name.
 # All other parts of the tuple are fixed.
 
@@ -21,7 +21,7 @@ nodes:
 
   - id: watcher
     tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
-    min: 1
+    min: 0
     max: 1
 #    force_name_matching: true
 

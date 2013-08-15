@@ -1,6 +1,4 @@
 <launch>
 
 
-<node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 .0205 .53 1.57075 0 0 /watcher /watcher/camera_front 100" />
-
 </launch>

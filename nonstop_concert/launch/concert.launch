@@ -18,7 +18,76 @@
     <!-- ********************************** TF *********************************** -->
     <node pkg="rocon_tf_reconstructor" name="rocon_tf_reconstructor" type="rocon_tf_reconstructor">
     </node>
-     <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 .0205 .53 0 1.57075 0 /watcher /camera_front 100" />
+<!--    
+    <group ns="watcher">
+      <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 .0205 .53 0 1.57075 0 /watcher /camera_front 100" />
+      <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /watcher base_link 10" />
+
+    </group>
+
+    <group ns="stroller">
+      <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /watcher base_link 100" />
+    </group>-->
+
+    
+    <group ns="watcher">
+      <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find coldeyes_description)/robots/coldeyes_marker.urdf.xacro'" />
+      <param name="robot_description" command="$(arg urdf_file)" />
+
+        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /watcher /watcher/base_link 10" />
+        
+        <param name="~tf_prefix" value="watcher" />
+        <param name="robot_description" command="$(arg urdf_file)" />
+
+        
+        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+          <param name="publish_frequency" type="double" value="5.0" />
+        </node>
+    </group> 
+
+
+
+
+
+    <group ns="stroller">
+        <arg name="attached_marker" value="0"/>
+        <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
+
+        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /stroller /stroller/base_footprint 10" />
+        
+        <param name="~tf_prefix" value="stroller" />
+        <param name="robot_description" command="$(arg urdf_file)" />
+
+        
+        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+          <param name="publish_frequency" type="double" value="5.0" />
+        </node>
+    </group> 
+
+
+
+
+
+
+
+
+
+
+    
+    <group ns="softstroller">
+        <arg name="attached_marker" value="0"/>
+        <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
+
+        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /softstroller /softstroller/base_footprint 10" />
+        
+        <param name="~tf_prefix" value="softstroller" />
+        <param name="robot_description" command="$(arg urdf_file)" />
+
+        
+        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+          <param name="publish_frequency" type="double" value="5.0" />
+        </node>
+    </group> 
 
 
 
