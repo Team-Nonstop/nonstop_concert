@@ -1,5 +1,4 @@
 <launch>
-<!--
 
     <group ns="watcher">
       <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find coldeyes_description)/robots/coldeyes_marker.urdf.xacro'" />
@@ -47,7 +46,8 @@
           <param name="publish_frequency" type="double" value="5.0" />
         </node>
     </group> 
--->
+
+
   <node pkg="marker_localization" type="marker_localization" name="marker_localization" output="screen"> </node>
 
 </launch>
