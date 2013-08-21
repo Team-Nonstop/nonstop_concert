@@ -6,4 +6,8 @@
     <arg name="rapp_lists" value="nonstop_rapps/nonstop.rapps"/>
     <arg name="gateway_watch_loop_period" value="1"/>
   </include>
+
+  <node pkg="rocon_tf_reconstructor" name="rocon_tf_reconstructor" type="rocon_tf_reconstructor">
+    </node>
+    
 </launch>

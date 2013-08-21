@@ -25,11 +25,11 @@ nodes:
     max: 1
 #    force_name_matching: true
 
-  - id: supervisor
-    tuple: linux.ros.markerserver.nonstop_rapps/marker_localization
-    min: 1
-    max: 1
-    force_name_matching: true
+#  - id: supervisor
+#    tuple: linux.ros.markerserver.nonstop_rapps/marker_localization
+#    min: 1
+#    max: 1
+#    force_name_matching: true
 
   - id: shared_database
     tuple: linux.ros.pc.nonstop_rapps/map_sharing
@@ -54,18 +54,20 @@ topics:
     type: nav_msgs/MapMetaData
   - id: watcher_visualization_marker
     type: visualization_msgs/Marker
+  - id: watcher_initialpose
+    type: geometry_msgs/PoseStamped
 
 # supervisor
-  #- id: supervisor_map
-  #  type: nav_msgs/OccupancyGrid
-  #- id: supervisor_map_metadata
-  #  type: nav_msgs/MapMetaData
-  - id: supervisor_visualization_marker
-    type: visualization_msgs/Marker
-  - id: supervisor_stroller_pose
-    type: geometry_msgs/PoseWithCovarianceStamped
-  - id: supervisor_softstroller_pose
-    type: geometry_msgs/PoseWithCovarianceStamped
+#  - id: supervisor_map
+#    type: nav_msgs/OccupancyGrid
+#  - id: supervisor_map_metadata
+#    type: nav_msgs/MapMetaData
+#  - id: supervisor_visualization_marker
+#    type: visualization_msgs/Marker
+#  - id: supervisor_stroller_pose
+#    type: geometry_msgs/PoseWithCovarianceStamped
+#  - id: supervisor_softstroller_pose
+#    type: geometry_msgs/PoseWithCovarianceStamped
 
 # stroller
   - id: stroller_pose
@@ -145,27 +147,31 @@ edges:
     finish: watcher_front
     remap_from: front/image_raw
     remap_to: front/image_raw
+  - start: watcher
+    finish: watcher_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
 
-  - start: supervisor
-    finish: supervisor_map
-    remap_from: map
-    remap_to: /map
-  - start: supervisor
-    finish: supervisor_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
-  - start: supervisor
-    finish: supervisor_visualization_marker
-    remap_from: visualization_marker
-    remap_to: /visualization_marker
-  - start: supervisor
-    finish: supervisor_stroller_pose
-    remap_from: stroller_pose
-    remap_to: /stroller/initialpose
-  - start: supervisor
-    finish: supervisor_softstroller_pose
-    remap_from: softstroller_pose
-    remap_to: /softstroller/initialpose
+#  - start: supervisor
+#    finish: supervisor_map
+#    remap_from: map
+#    remap_to: /map
+#  - start: supervisor
+#    finish: supervisor_map_metadata
+#    remap_from: map_metadata
+#    remap_to: /map_metadata
+#  - start: supervisor
+#    finish: supervisor_visualization_marker
+#    remap_from: visualization_marker
+#    remap_to: /visualization_marker
+#  - start: supervisor
+#    finish: supervisor_stroller_pose
+#    remap_from: stroller_pose
+#    remap_to: /stroller/initialpose
+#  - start: supervisor
+#    finish: supervisor_softstroller_pose
+#    remap_from: softstroller_pose
+#    remap_to: /softstroller/initialpose
 
 
   - start: stroller

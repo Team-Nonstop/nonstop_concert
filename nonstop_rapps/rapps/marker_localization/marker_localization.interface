@@ -1,6 +1,6 @@
 subscribers:
-#  - map
-#  - map_metadata
+  - map
+  - map_metadata
   - visualization_marker
 #  - visualization_marker_array
 publishers:

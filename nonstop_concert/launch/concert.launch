@@ -18,16 +18,6 @@
     <!-- ********************************** TF *********************************** -->
     <node pkg="rocon_tf_reconstructor" name="rocon_tf_reconstructor" type="rocon_tf_reconstructor">
     </node>
-<!--    
-    <group ns="watcher">
-      <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 .0205 .53 0 1.57075 0 /watcher /camera_front 100" />
-      <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /watcher base_link 10" />
-
-    </group>
-
-    <group ns="stroller">
-      <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /watcher base_link 100" />
-    </group>-->
 
     
     <group ns="watcher">
@@ -77,6 +67,9 @@
         </node>
     </group> 
 
+
+
+  <node pkg="marker_localization" type="marker_localization" name="marker_localization" output="screen"> </node>
 
 
     <!-- ********************************* rviz ********************************* -->
