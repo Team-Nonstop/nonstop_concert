@@ -47,6 +47,8 @@
     </group> 
 
 
-  <node pkg="marker_localization" type="marker_localization" name="marker_localization" output="screen"> </node>
+  <node pkg="marker_localization" type="marker_localization" name="marker_localization" output="screen">
+    <param name="robot_config_file" value="$(find marker_localization)/param/robot_config.yaml" />
+  </node>
 
 </launch>
