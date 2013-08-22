@@ -1,3 +1,7 @@
 apps:
   - nonstop_rapps/map_sharing
   - nonstop_rapps/marker_localization
+  - nonstop_rapps/annotation
+  - nonstop_rapps/commander
+  - nonstop_rapps/commander_soft
+  - nonstop_rapps/missioncoordinator
