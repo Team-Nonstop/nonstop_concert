@@ -1,0 +1,6 @@
+disply: Hermes Task Coordinator
+description: The task manager receives orders from commander and re-distributes to real-army and select the pair robot for the mission
+platform: linux.ros.pc
+launch: nonstop_rapps/taskcoordinator.launch
+interface: nonstop_rapps/taskcoordinator.interface
+

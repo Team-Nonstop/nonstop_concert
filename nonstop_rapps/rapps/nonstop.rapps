@@ -4,4 +4,5 @@ apps:
   - nonstop_rapps/annotation
   - nonstop_rapps/commander
   - nonstop_rapps/commander_soft
-  - nonstop_rapps/missioncoordinator
+  - nonstop_rapps/database
+  - nonstop_rapps/taskcoordinator
