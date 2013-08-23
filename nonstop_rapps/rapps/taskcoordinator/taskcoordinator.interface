@@ -3,8 +3,8 @@ publishers:
   - list_mission
 services: []
 action_clients: 
-  - agent_1/operational_mission
-  - agent_2/operational_mission
-  - agent_3/operational_mission
+  - gunbot_1/operational_mission
+  - gunbot_2/operational_mission
+  - gunbot_3/operational_mission
 action_servers: 
   - send_mission

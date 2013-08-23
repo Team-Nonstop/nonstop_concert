@@ -1,5 +1,5 @@
 <launch>
-  <node pkg="task_manager" name="nonstop_taskcoordinator" type="hermes_manager.py" output="screen">
+  <node pkg="task_manager" name="nonstop_taskcoordinator" type="nonstop_manager.py" output="screen">
     <rosparam>
       robot_num: 3
     </rosparam>
