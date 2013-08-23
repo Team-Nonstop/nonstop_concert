@@ -1,0 +1,5 @@
+display: Gunbot
+description: The turtlebot navigate around the site to clear missions. Fake version
+platform: linux.ros.gunbot_soft
+launch: nonstop_rapps/gunbot_soft.launch
+interface: nonstop_rapps/gunbot_soft.interface

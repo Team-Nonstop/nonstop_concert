@@ -1,0 +1,6 @@
+disply: Hermes Commander 
+description: Babo Commander  
+platform: linux.ros.soft_commander
+launch: nonstop_rapps/commander_soft.launch
+interface: nonstop_rapps/commander_soft.interface
+
