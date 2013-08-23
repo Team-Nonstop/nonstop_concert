@@ -1,0 +1,5 @@
+display: Hermes Database
+description: Provides shared information for the given environment such as map and location of tables
+platform: linux.ros.database
+launch:     nonstop_rapps/nonstop_database.launch
+interface:  nonstop_rapps/nonstop_database.interface
