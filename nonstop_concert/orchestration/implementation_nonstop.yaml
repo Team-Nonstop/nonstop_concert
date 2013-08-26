@@ -5,10 +5,15 @@
 name: "Nonstop Concert"
 nodes:
 
+  - id: stroller 
+    tuple: linux.ros.turtlebot_nonstop.turtlebot_nonstop_rapps/turtlebot_nonstop
+    min: 0
+    max: 2
+
   - id: softstroller 
     tuple: linux.ros.turtlebot_nonstop_soft.turtlebot_nonstop_soft_rapps/turtlebot_nonstop_soft
     min: 0
-    max: 3
+    max: 2
 
   - id: watcher
     tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
@@ -16,14 +21,8 @@ nodes:
     max: 1
 #    force_name_matching: true
 
-#  - id: supervisor
-#    tuple: linux.ros.markerserver.nonstop_rapps/marker_localization
-#    min: 1
-#    max: 1
-#    force_name_matching: true
-
-  - id: shared_database
-    tuple: linux.ros.pc.nonstop_rapps/map_sharing
+  - id: nonstop_database
+    tuple: linux.ros.pc.nonstop_rapps/nonstop_database
     min: 1
     max: 1
 #    force_name_matching: true
@@ -35,6 +34,10 @@ topics:
     type: nav_msgs/OccupancyGrid
   - id: shared_database_map_metadata
     type: nav_msgs/MapMetaData
+  - id: shared_database_site_pose_list
+    type: semantic_region_handler_nonstop/SitePoseList
+  - id: shared_database_tf
+    type: tf/tfMessage 
 
 # watcher
   - id: watcher_pose
@@ -48,18 +51,21 @@ topics:
   - id: watcher_initialpose
     type: geometry_msgs/PoseStamped
 
-# supervisor
-#  - id: supervisor_map
-#    type: nav_msgs/OccupancyGrid
-#  - id: supervisor_map_metadata
-#    type: nav_msgs/MapMetaData
-#  - id: supervisor_visualization_marker
-#    type: visualization_msgs/Marker
-#  - id: supervisor_stroller_pose
-#    type: geometry_msgs/PoseWithCovarianceStamped
-#  - id: supervisor_softstroller_pose
-#    type: geometry_msgs/PoseWithCovarianceStamped
-
+# stroller
+  - id: stroller_pose
+    type: geometry_msgs/PoseStamped
+  - id: stroller_map
+    type: nav_msgs/OccupancyGrid
+  - id: stroller_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: stroller_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: stroller_initialpose
+    type: geometry_msgs/PoseStamped
+  - id: stroller_particlecloud
+    type: geometry_msgs/PoseArray
+  - id: stroller_amcl_pose
+    type: geometry_msgs/PoseWithCovarianceStamped
 
 # softstroller
   - id: softstroller_pose
@@ -75,23 +81,31 @@ topics:
   - id: softstroller_particlecloud
     type: geometry_msgs/PoseArray
 
-
-
 actions:
+  - id: stroller_movebase
+    type: move_base_msgs/MoveBase
   - id: softstroller_movebase
     type: move_base_msgs/MoveBase
 
 edges:
 
-## multinav database
-  - start: shared_database
+## database
+  - start: nonstop_database
     finish: shared_database_map 
     remap_from: map
     remap_to: /map
-  - start: shared_database
+  - start: nonstop_database
     finish: shared_database_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
+  - start: nonstop_database
+    finish: shared_database_site_pose_list
+    remap_from: site_pose_list
+    remap_to: /nonstop_database/site_pose_list
+  - start: nonstop_database
+    finish: shared_database_tf
+    remap_from: tf
+    remap_to: /tf 
 
   - start: watcher
     finish: watcher_map
@@ -114,28 +128,23 @@ edges:
     remap_from: initialpose
     remap_to: initialpose
 
-#  - start: supervisor
-#    finish: supervisor_map
-#    remap_from: map
-#    remap_to: /map
-#  - start: supervisor
-#    finish: supervisor_map_metadata
-#    remap_from: map_metadata
-#    remap_to: /map_metadata
-#  - start: supervisor
-#    finish: supervisor_visualization_marker
-#    remap_from: visualization_marker
-#    remap_to: /visualization_marker
-#  - start: supervisor
-#    finish: supervisor_stroller_pose
-#    remap_from: stroller_pose
-#    remap_to: /stroller/initialpose
-#  - start: supervisor
-#    finish: supervisor_softstroller_pose
-#    remap_from: softstroller_pose
-#    remap_to: /softstroller/initialpose
 
-
+  - start: stroller
+    finish: stroller_map
+    remap_from: map
+    remap_to: /map
+  - start: stroller
+    finish: stroller_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: stroller
+    finish: stroller_simple_goal
+    remap_from: move_base_simple/goal
+    remap_to: goal_simple
+  - start: stroller
+    finish: stroller_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
 
 
   - start: softstroller
@@ -154,3 +163,4 @@ edges:
     finish: softstroller_initialpose
     remap_from: initialpose
     remap_to: initialpose
+

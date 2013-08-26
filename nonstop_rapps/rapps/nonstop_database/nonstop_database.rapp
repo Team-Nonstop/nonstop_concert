@@ -1,0 +1,5 @@
+display: Nonstop Database
+description: Provides shared map for the given environment 
+platform: linux.ros.pc
+launch:     nonstop_rapps/nonstop_database.launch
+interface:  nonstop_rapps/nonstop_database.interface

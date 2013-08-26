@@ -1,4 +1,0 @@
-<launch>
-  <arg name="map_name" default="$(find nonstop_maps)/maps/A304.yaml"/>
-  <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_name)"> </node>
-</launch>

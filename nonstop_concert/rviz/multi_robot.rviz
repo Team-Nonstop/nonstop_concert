@@ -27,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Image
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -50,179 +50,9 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
-        /map:
-          Value: true
-        /softstroller:
-          Value: true
-        /softstroller/base_footprint:
-          Value: true
-        /softstroller/base_link:
-          Value: true
-        /softstroller/camera_depth_frame:
-          Value: true
-        /softstroller/camera_depth_optical_frame:
-          Value: true
-        /softstroller/camera_link:
-          Value: true
-        /softstroller/camera_rgb_frame:
-          Value: true
-        /softstroller/camera_rgb_optical_frame:
-          Value: true
-        /softstroller/caster_back_link:
-          Value: true
-        /softstroller/caster_front_link:
-          Value: true
-        /softstroller/cliff_sensor_front_link:
-          Value: true
-        /softstroller/cliff_sensor_left_link:
-          Value: true
-        /softstroller/cliff_sensor_right_link:
-          Value: true
-        /softstroller/gyro_link:
-          Value: true
-        /softstroller/marker_backward_link:
-          Value: true
-        /softstroller/marker_front_link:
-          Value: true
-        /softstroller/marker_left_link:
-          Value: true
-        /softstroller/marker_right_link:
-          Value: true
-        /softstroller/plate_bottom_link:
-          Value: true
-        /softstroller/plate_middle_link:
-          Value: true
-        /softstroller/plate_top_link:
-          Value: true
-        /softstroller/pole_bottom_0_link:
-          Value: true
-        /softstroller/pole_bottom_1_link:
-          Value: true
-        /softstroller/pole_bottom_2_link:
-          Value: true
-        /softstroller/pole_bottom_3_link:
-          Value: true
-        /softstroller/pole_bottom_4_link:
-          Value: true
-        /softstroller/pole_bottom_5_link:
-          Value: true
-        /softstroller/pole_kinect_0_link:
-          Value: true
-        /softstroller/pole_kinect_1_link:
-          Value: true
-        /softstroller/pole_middle_0_link:
-          Value: true
-        /softstroller/pole_middle_1_link:
-          Value: true
-        /softstroller/pole_middle_2_link:
-          Value: true
-        /softstroller/pole_middle_3_link:
-          Value: true
-        /softstroller/pole_top_0_link:
-          Value: true
-        /softstroller/pole_top_1_link:
-          Value: true
-        /softstroller/pole_top_2_link:
-          Value: true
-        /softstroller/pole_top_3_link:
-          Value: true
-        /softstroller1:
-          Value: true
-        /softstroller2:
-          Value: true
-        /stroller:
-          Value: true
-        /stroller/base_footprint:
-          Value: true
-        /stroller/base_link:
-          Value: true
-        /stroller/camera_depth_frame:
-          Value: true
-        /stroller/camera_depth_optical_frame:
-          Value: true
-        /stroller/camera_link:
-          Value: true
-        /stroller/camera_rgb_frame:
-          Value: true
-        /stroller/camera_rgb_optical_frame:
-          Value: true
-        /stroller/caster_back_link:
-          Value: true
-        /stroller/caster_front_link:
-          Value: true
-        /stroller/cliff_sensor_front_link:
-          Value: true
-        /stroller/cliff_sensor_left_link:
-          Value: true
-        /stroller/cliff_sensor_right_link:
-          Value: true
-        /stroller/gyro_link:
-          Value: true
-        /stroller/marker_backward_link:
-          Value: true
-        /stroller/marker_front_link:
-          Value: true
-        /stroller/marker_left_link:
-          Value: true
-        /stroller/marker_right_link:
-          Value: true
-        /stroller/plate_bottom_link:
-          Value: true
-        /stroller/plate_middle_link:
-          Value: true
-        /stroller/plate_top_link:
-          Value: true
-        /stroller/pole_bottom_0_link:
-          Value: true
-        /stroller/pole_bottom_1_link:
-          Value: true
-        /stroller/pole_bottom_2_link:
-          Value: true
-        /stroller/pole_bottom_3_link:
-          Value: true
-        /stroller/pole_bottom_4_link:
-          Value: true
-        /stroller/pole_bottom_5_link:
-          Value: true
-        /stroller/pole_kinect_0_link:
-          Value: true
-        /stroller/pole_kinect_1_link:
-          Value: true
-        /stroller/pole_middle_0_link:
-          Value: true
-        /stroller/pole_middle_1_link:
-          Value: true
-        /stroller/pole_middle_2_link:
-          Value: true
-        /stroller/pole_middle_3_link:
-          Value: true
-        /stroller/pole_top_0_link:
-          Value: true
-        /stroller/pole_top_1_link:
-          Value: true
-        /stroller/pole_top_2_link:
-          Value: true
-        /stroller/pole_top_3_link:
-          Value: true
-        /watcher:
-          Value: true
-        /watcher/base_link:
-          Value: true
-        /watcher/camera_backward:
-          Value: true
-        /watcher/camera_front:
-          Value: true
-        /watcher/marker_back_link:
-          Value: true
-        /watcher/marker_front_link:
-          Value: true
-        /watcher/x_leg:
-          Value: true
-        /watcher/y_leg:
-          Value: true
         All Enabled: true
       Marker Scale: 0.1
       Name: TF
@@ -230,96 +60,9 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        /map:
-          /softstroller:
-            /softstroller/base_footprint:
-              /softstroller/base_link:
-                /softstroller/camera_rgb_frame:
-                  /softstroller/camera_depth_frame:
-                    /softstroller/camera_depth_optical_frame:
-                      {}
-                  /softstroller/camera_link:
-                    {}
-                  /softstroller/camera_rgb_optical_frame:
-                    {}
-                /softstroller/caster_back_link:
-                  {}
-                /softstroller/caster_front_link:
-                  {}
-                /softstroller/cliff_sensor_front_link:
-                  {}
-                /softstroller/cliff_sensor_left_link:
-                  {}
-                /softstroller/cliff_sensor_right_link:
-                  {}
-                /softstroller/gyro_link:
-                  {}
-                /softstroller/marker_backward_link:
-                  {}
-                /softstroller/marker_front_link:
-                  {}
-                /softstroller/marker_left_link:
-                  {}
-                /softstroller/marker_right_link:
-                  {}
-                /softstroller/plate_bottom_link:
-                  {}
-                /softstroller/plate_middle_link:
-                  {}
-                /softstroller/plate_top_link:
-                  {}
-                /softstroller/pole_bottom_0_link:
-                  {}
-                /softstroller/pole_bottom_1_link:
-                  {}
-                /softstroller/pole_bottom_2_link:
-                  {}
-                /softstroller/pole_bottom_3_link:
-                  {}
-                /softstroller/pole_bottom_4_link:
-                  {}
-                /softstroller/pole_bottom_5_link:
-                  {}
-                /softstroller/pole_kinect_0_link:
-                  {}
-                /softstroller/pole_kinect_1_link:
-                  {}
-                /softstroller/pole_middle_0_link:
-                  {}
-                /softstroller/pole_middle_1_link:
-                  {}
-                /softstroller/pole_middle_2_link:
-                  {}
-                /softstroller/pole_middle_3_link:
-                  {}
-                /softstroller/pole_top_0_link:
-                  {}
-                /softstroller/pole_top_1_link:
-                  {}
-                /softstroller/pole_top_2_link:
-                  {}
-                /softstroller/pole_top_3_link:
-                  {}
-          /softstroller1:
-            {}
-          /softstroller2:
-            {}
-          /watcher:
-            /watcher/base_link:
-              /watcher/camera_backward:
-                {}
-              /watcher/camera_front:
-                {}
-              /watcher/marker_back_link:
-                {}
-              /watcher/marker_front_link:
-                {}
-              /watcher/x_leg:
-                {}
-              /watcher/y_leg:
-                {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Alpha: 0.7
       Class: rviz/Map
       Draw Behind: false
@@ -603,11 +346,6 @@ Visualization Manager:
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
         base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_backward:
           Alpha: 1
           Show Axes: false
           Show Trail: false
