@@ -17,7 +17,7 @@ nodes:
   - id: commander
 #    tuple: android.*.*.OrderDrinks
 #    min: 0
-    tuple: linux.ros.soft_customer.nonstop_rapps/commander_soft
+    tuple: linux.ros.soft_commander.nonstop_rapps/multi_commander_soft
     min: 1
   - id: gunbot
     tuple: linux.ros.gunbot_soft.nonstop_rapps/gunbot_soft
@@ -31,24 +31,24 @@ topics:
   - id: nonstop_database_gunbot_map_metadata
     type: nav_msgs/MapMetaData
   - id: nonstop_database_gunbot_site_pose_list
-    type: semantic_region_handler/TablePoseList
+    type: semantic_region_handler/SitePoseList
   - id: nonstop_database_gunbot_ar_marker_list
     type: ar_track_alvar/AlvarMarkers
 
 ## Task Coordinator - Kitchen Manager
-#  - id: taskcoordinator_kitchen_list_mission
-#    type: nonstop_msgs/OrderList
+  - id: taskcoordinator_base_camp_list_mission
+    type: nonstop_msgs/MissionList
 
 ## Visualization topics in workspace
  # Waiterbot1
   - id: gunbot_pose 
     type: geometry_msgs/PoseStamped
 ## Waiterbot2
-# - id: gunbot2_pose 
-#   type: geometry_msgs/PoseStamped
+  - id: gunbot2_pose 
+    type: geometry_msgs/PoseStamped
 ## Waiterbot3
-# - id: gunbot3_pose 
-#   type: geometry_msgs/PoseStamped
+  - id: gunbot3_pose 
+    type: geometry_msgs/PoseStamped
  # Cafe database
   - id: nonstop_database_site_marker
     type: visualization_msgs/MarkerArray
@@ -60,12 +60,12 @@ topics:
 
 actions:
 ## Task Coordinator - User Device
-  - id: taskcoordinator_userdevice_send_mission
-    type: nonstop_msgs/UserOrder
+  - id: taskcoordinator_commander_send_mission
+    type: nonstop_msgs/UserMission
 
 ## Task Coordinator - Waiterbot
   - id: taskcoordinator_gunbot_operational_mission
-    type: nonstop_msgs/DeliveryOrder
+    type: nonstop_msgs/OperationalMission
 
 edges:
 ## Cafe database
@@ -100,7 +100,7 @@ edges:
 
 ## Cafe Customer
   - start: commander 
-    finish: taskcoordinator_userdevice_send_mission
+    finish: taskcoordinator_commander_send_mission
     remap_from: send_mission
     remap_to: /nonstop_taskcoordinator/send_mission
 
@@ -119,19 +119,19 @@ edges:
     remap_to: /gunbot3/operational_mission
 
   - start:  nonstop_taskcoordinator
-    finish: taskcoordinator_userdevice_send_mission
+    finish: taskcoordinator_commander_send_mission
     remap_from: send_mission
     remap_to: /nonstop_taskcoordinator/send_mission
   - start: nonstop_taskcoordinator
-    finish: taskcoordinator_kitchen_list_mission
+    finish: taskcoordinator_base_camp_list_mission
     remap_from: list_mission
     remap_to: /list_mission
 
 ## Kitchen Manager
-#  - start: taskcoordinator_kitchen_list_mission
-#    finish: kitchen
-#    remap_from: list_mission
-#    remap_to: /list_mission
+  - start: taskcoordinator_base_camp_list_mission
+    finish: base_camp
+    remap_from: list_mission
+    remap_to: /list_mission
 
 ## Waiter
   - start: nonstop_database_gunbot_map

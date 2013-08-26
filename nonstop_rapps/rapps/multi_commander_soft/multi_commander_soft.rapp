@@ -1,0 +1,6 @@
+disply: Nonstop Commander
+description: Babo commander  
+platform: linux.ros.soft_commander
+launch: nonstop_rapps/multi_commander_soft.launch
+interface: nonstop_rapps/commander_soft.interface
+

@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="commander" name="customer" type="multi_commander_soft.py" output="screen"/>
+</launch>

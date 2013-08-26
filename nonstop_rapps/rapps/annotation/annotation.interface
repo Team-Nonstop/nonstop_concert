@@ -5,7 +5,7 @@ publishers:
   - semantic_map/site_pose_list
   - semantic_map/marker_pose_list
   - viz_ar_list
-  - table_marker
+  - site_marker
   - tf
 services: 
   - add_ar_marker

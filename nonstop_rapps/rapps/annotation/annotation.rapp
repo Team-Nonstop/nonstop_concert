@@ -1,5 +1,5 @@
 display: Hermes Database Annotator
 description: Provides shared information for the given environment such as map and location of tables and provide annotation handle
 platform: linux.ros.pc
-launch:     nostop_rapps/annotation.launch
+launch:     nonstop_rapps/annotation.launch
 interface:  nonstop_rapps/annotation.interface

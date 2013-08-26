@@ -38,7 +38,8 @@ find_package(catkin REQUIRED std_msgs actionlib_msgs message_generation)
 add_action_files(
   DIRECTORY action
   FILES
-  UserCommand.action
+  UserMission.action
+  OperationalMission.action
 )
 
 ## Generate added messages and services with any dependencies listed here
