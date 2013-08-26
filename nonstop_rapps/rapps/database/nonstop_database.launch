@@ -13,8 +13,9 @@
     <arg name="user" value="$(arg world_model_username)"/>
     <arg name="password" value="$(arg world_model_password)"/>
   </include>
+  <!--
   <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
     <arg name="port" value="9091" />
   </include>
-
+-->
 </launch>

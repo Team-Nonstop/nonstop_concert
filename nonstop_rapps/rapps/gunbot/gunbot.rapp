@@ -1,0 +1,5 @@
+display: Gunbot
+description: The turtlebot navigate around the warplace to shot bullet. 
+platform: linux.ros.turtlebot
+launch: cafe_rapps/gunbot.launch
+interface: cafe_rapps/gunbot.interface

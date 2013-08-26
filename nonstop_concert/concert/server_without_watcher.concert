@@ -1,5 +1,0 @@
-<concert>
-  <launch package="nonstop_concert" name="concert.launch" port="11311" />
-  <launch package="nonstop_clients" name="multinav_database_client.launch" port="11312" />
-  <launch package="nonstop_clients" name="marker_server.launch" port="11313" />
-</concert>

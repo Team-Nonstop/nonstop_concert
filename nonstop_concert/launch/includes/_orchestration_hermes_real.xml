@@ -2,6 +2,6 @@
   <node name="orchestration" pkg="concert_orchestra" type="orchestra.py" output="screen">
 <!--    <param name="dot_graph" textfile="$(find cafe_concert)/orchestration/implementation.dot" />-->
     <param name="auto_start" value="true"/>
-    <rosparam file="$(find nonstop_concert)/orchestration/implementation.yaml" command="load"/>
+    <rosparam file="$(find nonstop_concert)/orchestration/implementation_hermes_real.yaml" command="load"/>
   </node>
 </launch>

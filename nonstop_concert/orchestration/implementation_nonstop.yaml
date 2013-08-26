@@ -4,20 +4,11 @@
 
 name: "Nonstop Concert"
 nodes:
-  - id: sniper 
-    tuple: linux.ros.sniperbot.nonstop_rapps/sniperbot
-    min: 0
-    max: 3
-
-  - id: stroller 
-    tuple: linux.ros.turtlebot_nonstop.turtlebot_nonstop_rapps/turtlebot_nonstop
-    min: 0
-    max: 2
 
   - id: softstroller 
     tuple: linux.ros.turtlebot_nonstop_soft.turtlebot_nonstop_soft_rapps/turtlebot_nonstop_soft
     min: 0
-    max: 2
+    max: 3
 
   - id: watcher
     tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
@@ -69,21 +60,6 @@ topics:
 #  - id: supervisor_softstroller_pose
 #    type: geometry_msgs/PoseWithCovarianceStamped
 
-# stroller
-  - id: stroller_pose
-    type: geometry_msgs/PoseStamped
-  - id: stroller_map
-    type: nav_msgs/OccupancyGrid
-  - id: stroller_map_metadata
-    type: nav_msgs/MapMetaData
-  - id: stroller_simple_goal
-    type: geometry_msgs/PoseStamped
-  - id: stroller_initialpose
-    type: geometry_msgs/PoseStamped
-  - id: stroller_particlecloud
-    type: geometry_msgs/PoseArray
-  - id: stroller_amcl_pose
-    type: geometry_msgs/PoseWithCovarianceStamped
 
 # softstroller
   - id: softstroller_pose
@@ -99,23 +75,9 @@ topics:
   - id: softstroller_particlecloud
     type: geometry_msgs/PoseArray
 
-# sniper
-  - id: sniper_pose
-    type: geometry_msgs/PoseStamped
-  - id: sniper_map
-    type: nav_msgs/OccupancyGrid
-  - id: sniper_map_metadata
-    type: nav_msgs/MapMetaData
-  - id: sniper_simple_goal
-    type: geometry_msgs/PoseStamped
-  - id: sniper_initialpose
-    type: geometry_msgs/PoseStamped
+
 
 actions:
-  - id: stroller_movebase
-    type: move_base_msgs/MoveBase
-  - id: sniper_movebase
-    type: move_base_msgs/MoveBase
   - id: softstroller_movebase
     type: move_base_msgs/MoveBase
 
@@ -174,22 +136,6 @@ edges:
 #    remap_to: /softstroller/initialpose
 
 
-  - start: stroller
-    finish: stroller_map
-    remap_from: map
-    remap_to: /map
-  - start: stroller
-    finish: stroller_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
-  - start: stroller
-    finish: stroller_simple_goal
-    remap_from: move_base_simple/goal
-    remap_to: goal_simple
-  - start: stroller
-    finish: stroller_initialpose
-    remap_from: initialpose
-    remap_to: initialpose
 
 
   - start: softstroller
@@ -206,24 +152,5 @@ edges:
     remap_to: goal_simple
   - start: softstroller
     finish: softstroller_initialpose
-    remap_from: initialpose
-    remap_to: initialpose
-
-
-
-  - start: sniper
-    finish: sniper_map
-    remap_from: map
-    remap_to: /map
-  - start: sniper
-    finish: sniper_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
-  - start: sniper
-    finish: sniper_simple_goal
-    remap_from: move_base_simple/goal
-    remap_to: goal_simple
-  - start: sniper
-    finish: sniper_initialpose
     remap_from: initialpose
     remap_to: initialpose

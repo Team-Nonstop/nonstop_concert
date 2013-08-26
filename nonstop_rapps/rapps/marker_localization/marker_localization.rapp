@@ -1,5 +1,0 @@
-display: Marker Localization
-description: Provides initial pose for client robot which has marker 
-platform: linux.ros.markerserver
-launch:     nonstop_rapps/marker_localization.launch
-interface:  nonstop_rapps/marker_localization.interface
