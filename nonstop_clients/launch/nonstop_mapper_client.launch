@@ -2,7 +2,7 @@
   <!-- Configuration set in environment -->
   <param name="/cmd_vel_mux/yaml_cfg_file" value="$(find turtlebot_nonstop_bringup)/param/vel_multiplexer.yaml"/>
   <!-- Configuration set in environment -->
-  <include file="$(find lemonabot_bringup)/launch/minimal.launch">
+  <include file="$(find lemonabot_bringup)/launch/minimal_with_app_manager.launch">
     <arg name="robot_name" value="mapper"/>
     <arg name="robot_type" value="lemonabot"/>
     <arg name="concert_name" value="nonstop_concert"/>
