@@ -6,7 +6,7 @@ name: "Nonstop Mapping Concert"
 nodes:
 
   - id: mapper 
-    tuple: linux.ros.turtlebot_nonstop.turtlebot_nonstop_rapps/turtlebot_nonstop
+    tuple: linux.ros.lemonabot.nonstop_rapps/mapper
     min: 1
     max: 1
 
