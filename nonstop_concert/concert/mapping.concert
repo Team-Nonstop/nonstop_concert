@@ -1,0 +1,4 @@
+<concert>
+  <launch package="nonstop_concert" name="mapping.launch" port="11311" />
+  <launch package="nonstop_clients" name="nonstop_watcher_client.launch" port="11313" />
+</concert>
