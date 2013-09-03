@@ -1,6 +1,6 @@
 subscribers: 
-#  - map
-#  - map_metadata 
+  - map
+  - map_metadata 
   - move_base_simple/goal
   - initialpose
 publishers: 
