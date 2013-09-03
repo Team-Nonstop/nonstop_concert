@@ -1,5 +1,5 @@
 <launch>
-  <!--
+
   <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
     <arg name="rgb_processing" value="false" />
     <arg name="depth_registration" value="false" />
@@ -16,9 +16,9 @@
   </include>
 
   <include file="$(find turtlebot_navigation)/launch/includes/_move_base.launch"/>
--->
 
-  <include file="$(find sniperbot_bringup)/launch/sniperbot_demo.launch"/>
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 /map /odom 100" />
+
   <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher">
     <rosparam>
       is_stamped: true
