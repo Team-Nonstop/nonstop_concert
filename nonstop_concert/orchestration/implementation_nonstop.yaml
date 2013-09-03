@@ -6,7 +6,7 @@ name: "Nonstop Concert"
 nodes:
 
   - id: stroller 
-    tuple: linux.ros.turtlebot_nonstop.turtlebot_nonstop_rapps/turtlebot_nonstop
+    tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/stroller
     min: 0
     max: 2
 
