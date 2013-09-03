@@ -3,7 +3,7 @@
   <param name="/cmd_vel_mux/yaml_cfg_file" value="$(find turtlebot_bringup)/param/vel_multiplexer.yaml"/>
   <!-- Configuration set in environment -->
   <include file="$(find turtlebot_nonstop_bringup)/launch/minimal_with_appmanager.launch">
-    <arg name="robot_name" value="stroller2"/>
+    <arg name="robot_name" value="stroller"/>
     <arg name="robot_type" value="turtlebot_nonstop"/>
     <arg name="concert_name" value="nonstop_concert"/>
     <arg name="attached_marker" value="1"/>
