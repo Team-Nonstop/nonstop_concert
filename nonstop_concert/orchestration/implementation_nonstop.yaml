@@ -54,10 +54,10 @@ topics:
 # stroller
   - id: stroller_pose
     type: geometry_msgs/PoseStamped
-  - id: stroller_map
-    type: nav_msgs/OccupancyGrid
-  - id: stroller_map_metadata
-    type: nav_msgs/MapMetaData
+ # - id: stroller_map
+ #   type: nav_msgs/OccupancyGrid
+ # - id: stroller_map_metadata
+ #   type: nav_msgs/MapMetaData
   - id: stroller_simple_goal
     type: geometry_msgs/PoseStamped
   - id: stroller_initialpose
@@ -127,14 +127,14 @@ edges:
     remap_from: initialpose
     remap_to: initialpose
 
-  - start: stroller
-    finish: stroller_map
-    remap_from: map
-    remap_to: /map
-  - start: stroller
-    finish: stroller_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
+ # - start: stroller
+ #   finish: stroller_map
+ #   remap_from: map
+ #   remap_to: /map
+ # - start: stroller
+ #   finish: stroller_map_metadata
+ #   remap_from: map_metadata
+ #   remap_to: /map_metadata
   - start: stroller
     finish: stroller_simple_goal
     remap_from: move_base_simple/goal
