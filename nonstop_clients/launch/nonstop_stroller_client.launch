@@ -1,11 +1,10 @@
 <launch>
   <!-- Configuration set in environment -->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
-<group ns="stroller">
+
   <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch">
     <arg name="map_file" value="$(find nonstop_maps)/maps/A304.yaml"/>
   </include>
-</group>
 
 
 
