@@ -1,9 +1,5 @@
 <launch>
 
-  <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch">
-    <arg name="map_file" value="$(find nonstop_maps)/maps/A304.yaml"/>
-  </include>
-
   <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher">
     <rosparam>
       is_stamped: true

@@ -1,12 +1,11 @@
 <launch>
   <!-- Configuration set in environment -->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
-    <node pkg="fake_localization" name="fake_localization" type="fake_localization">
-    <remap from="base_pose_ground_truth" to="/odom"/>   
-    <remap from="initialpose" to="/stroller/initialpose"/>   
-    <remap from="amcl_pose" to="/stroller/amcl_pose"/>  
-    <remap from="particlecloud" to="/stroller/particlecloud"/>  
-  </node>
+
+  <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch">
+    <arg name="map_file" value="$(find nonstop_maps)/maps/A304.yaml"/>
+  </include>
+
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="stroller"/>
     <arg name="robot_type" value="turtlebot_nonstop"/>
