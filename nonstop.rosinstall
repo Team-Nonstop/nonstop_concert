@@ -55,6 +55,11 @@
     local-name: navigation
     version: groovy-devel-catkinized
 
+- git:
+    uri: https://github.com/Team-Nonstop/turtlebot_apps.git
+    local-name: turtlebot_apps
+    version: hydro-devel
+
 ## LemonaBot
 - git: 
     uri: https://github.com/Team-Nonstop/cereal_port.git
