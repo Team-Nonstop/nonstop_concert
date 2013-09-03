@@ -7,7 +7,7 @@
 
     <arg name="map_file" value="$(find nonstop_maps)/maps/A304.yaml"/>
   </include>
-    <remap from="map" to="/map"/>
+    <remap from="/map" to="map"/>
   </group>
 
 
