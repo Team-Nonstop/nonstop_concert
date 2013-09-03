@@ -4,6 +4,9 @@
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
 
   <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch">
+    <remap from="map" to="/map"/>
+    <remap from="scan" to="/scan"/>
+
     <arg name="map_file" value="$(find nonstop_maps)/maps/A304.yaml"/>
   </include>
   </group>
