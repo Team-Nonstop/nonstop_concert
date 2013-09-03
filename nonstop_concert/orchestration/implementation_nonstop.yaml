@@ -137,8 +137,8 @@ edges:
     remap_to: /map_metadata
   - start: stroller
     finish: stroller_simple_goal
-    remap_from: move_base_simple/goal
-    remap_to: /goal_simple
+    remap_from: /move_base_simple/goal
+    remap_to: goal_simple
   - start: stroller
     finish: stroller_initialpose
     remap_from: initialpose
