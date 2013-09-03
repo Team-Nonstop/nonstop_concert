@@ -5,7 +5,9 @@
   <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch">
     <arg name="map_file" value="$(find nonstop_maps)/maps/A304.yaml"/>
   </include>
-  <remap from="/move_base_simple/goal" to="/stroller/move_base_simple/goal"/>
+  
+  <remap from="move_base_simple/goal" to="stroller/move_base_simple/goal"/>
+  <remap from="initialpose" to="stroller/initialpose"/>
 
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="stroller"/>
