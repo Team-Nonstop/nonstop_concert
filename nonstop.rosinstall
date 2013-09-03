@@ -35,7 +35,7 @@
 - git:
     uri: https://github.com/Team-Nonstop/turtlebot.git
     local-name: turtlebot
-    version: hydro-devel
+    version: groovy
 
 # Turtlebot dependency
 - git: 
@@ -68,7 +68,7 @@
 - git:
     uri: https://github.com/Team-Nonstop/turtlebot_apps.git
     local-name: turtlebot_apps
-    version: hydro-devel
+    version: groovy
 
 ## LemonaBot
 - git: 
