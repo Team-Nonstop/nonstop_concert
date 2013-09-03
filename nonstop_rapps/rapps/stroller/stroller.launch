@@ -17,9 +17,7 @@
 
   <include file="$(find turtlebot_navigation)/launch/includes/_move_base.launch"/>
 
-  <node pkg="fake_localization" name="fake_localization" type="fake_localization">
-    <remap from="base_pose_ground_truth" to="/odom"/>   
-  </node>
+
 
   <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher">
     <rosparam>

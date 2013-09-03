@@ -1,6 +1,9 @@
 <launch>
   <!-- Configuration set in environment -->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+    <node pkg="fake_localization" name="fake_localization" type="fake_localization">
+    <remap from="base_pose_ground_truth" to="/odom"/>   
+  </node>
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="stroller"/>
     <arg name="robot_type" value="turtlebot_nonstop"/>
