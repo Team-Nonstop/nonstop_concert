@@ -7,7 +7,7 @@ nodes:
 
   - id: stroller 
     tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/stroller
-    min: 0
+    min: 2
     max: 2
 
   - id: softstroller 
