@@ -30,13 +30,13 @@ nodes:
 
 topics:
 # Shared Database
-  - id: shared_database_map
+  - id: nonstop_database_map
     type: nav_msgs/OccupancyGrid
-  - id: shared_database_map_metadata
+  - id: nonstop_database_map_metadata
     type: nav_msgs/MapMetaData
-  - id: shared_database_site_pose_list
+  - id: nonstop_database_site_pose_list
     type: semantic_region_handler_nonstop/SitePoseList
-  - id: shared_database_tf
+  - id: nonstop_database_tf
     type: tf/tfMessage 
 
 # watcher
@@ -91,19 +91,19 @@ edges:
 
 ## database
   - start: nonstop_database
-    finish: shared_database_map 
+    finish: nonstop_database_map 
     remap_from: map
     remap_to: /map
   - start: nonstop_database
-    finish: shared_database_map_metadata
+    finish: nonstop_database_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
   - start: nonstop_database
-    finish: shared_database_site_pose_list
+    finish: nonstop_database_site_pose_list
     remap_from: site_pose_list
     remap_to: /nonstop_database/site_pose_list
   - start: nonstop_database
-    finish: shared_database_tf
+    finish: nonstop_database_tf
     remap_from: tf
     remap_to: /tf 
 
