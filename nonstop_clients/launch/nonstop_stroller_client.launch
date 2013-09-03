@@ -57,8 +57,8 @@
     <param name="initial_pose_y" value="$(arg initial_pose_y)"/>
     <param name="initial_pose_a" value="$(arg initial_pose_a)"/>
 
-    <remap from="initialpose" to="stroller/initialpose"/>
-    <remap from="move_base_simple/goal" to="stroller/move_base_simple/goal"/>
+    <remap to="initialpose" from="stroller/initialpose"/>
+    <remap to="move_base_simple/goal" from="stroller/move_base_simple/goal"/>
   </node>
 
   <include file="$(find turtlebot_navigation)/launch/includes/_move_base.launch"/>
