@@ -88,7 +88,6 @@ actions:
     type: move_base_msgs/MoveBase
 
 edges:
-
 ## database
   - start: nonstop_database
     finish: nonstop_database_map 
@@ -128,7 +127,6 @@ edges:
     remap_from: initialpose
     remap_to: initialpose
 
-
   - start: stroller
     finish: stroller_map
     remap_from: map
@@ -146,7 +144,6 @@ edges:
     remap_from: initialpose
     remap_to: initialpose
 
-
   - start: softstroller
     finish: softstroller_map
     remap_from: map
@@ -163,4 +160,3 @@ edges:
     finish: softstroller_initialpose
     remap_from: initialpose
     remap_to: initialpose
-
