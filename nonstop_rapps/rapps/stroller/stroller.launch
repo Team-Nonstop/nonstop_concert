@@ -59,7 +59,7 @@
     <rosparam file="$(find turtlebot_navigation)/param/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find turtlebot_navigation)/param/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find turtlebot_navigation)/param/base_local_planner_params.yaml" command="load" />
-    <remap from="cmd_vel" to="cmd_vel_mux/input/navi_raw"/>
+    <remap from="cmd_vel" to="/cmd_vel_mux/input/navi_raw"/>
     
 <!--    <remap from="move_base_simple/goal" to="stroller/move_base_simple/goal"/>-->
   </node>
