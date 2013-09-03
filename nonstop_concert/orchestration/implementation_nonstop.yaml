@@ -13,7 +13,7 @@ nodes:
   - id: softstroller 
     tuple: linux.ros.turtlebot_nonstop_soft.turtlebot_nonstop_soft_rapps/turtlebot_nonstop_soft
     min: 0
-    max: 2
+    max: 3
 
   - id: watcher
     tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
