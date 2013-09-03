@@ -6,6 +6,9 @@
     <arg name="depth_registration" value="false" />
     <arg name="depth_processing" value="false" />
   </include>
+  <!-- Map server -->
+  <arg name="map_file" default="$(find nonstop_maps)/maps/A304.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
 
   <arg name="use_map_topic" default="false"/>
