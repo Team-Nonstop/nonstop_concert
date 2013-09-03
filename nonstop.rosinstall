@@ -43,6 +43,16 @@
     local-name: xacro
     version: hydro-devel
 
+- git: 
+    uri: https://github.com/ros-drivers/openni_launch.git
+    local-name: openni_launch
+    version: hydro-devel
+- git: 
+    uri: https://github.com/ros-drivers/rgbd_launch.git
+    local-name: rgbd_launch
+    version: hydro-devel
+
+
 #Nonstop Robots dependency
 ## Turtlebot_Nonstop
 - git: 
