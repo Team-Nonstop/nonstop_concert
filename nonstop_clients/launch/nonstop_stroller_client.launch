@@ -2,7 +2,8 @@
   <!-- Configuration set in environment -->
   <param name="/cmd_vel_mux/yaml_cfg_file" value="$(find turtlebot_bringup)/param/vel_multiplexer.yaml"/>
   <!-- Configuration set in environment -->
-  <include file="$(find turtlebot_bringup)/launch/minimal_with_appmanager.launch">
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+  <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="stroller"/>
     <arg name="robot_type" value="turtlebot_nonstop"/>
     <arg name="concert_name" value="nonstop_concert"/>
@@ -10,4 +11,5 @@
     <arg name="rapp_lists" value="nonstop_rapps/nonstop.rapps"/>
     <arg name="gateway_watch_loop_period" value="1"/>
   </include>
+
 </launch>
