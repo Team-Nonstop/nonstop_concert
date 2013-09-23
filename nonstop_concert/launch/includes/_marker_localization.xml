@@ -29,13 +29,30 @@
         </node>
 </group> 
 
-<group ns="stroller">
+
+
+<group ns="hyundai">
         <arg name="attached_marker" value="0"/>
         <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
 
-        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /stroller /stroller/base_footprint 10" />
+        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /hyundai_m /hyundai/base_footprint 10" />
         
-        <param name="~tf_prefix" value="stroller" />
+        <param name="~tf_prefix" value="hyundai" />
+        <param name="robot_description" command="$(arg urdf_file)" />
+
+        
+        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+          <param name="publish_frequency" type="double" value="5.0" />
+        </node>
+</group> 
+
+<group ns="samsung">
+        <arg name="attached_marker" value="1"/>
+        <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
+
+        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /samsung_m /samsung/base_footprint 10" />
+        
+        <param name="~tf_prefix" value="samsung" />
         <param name="robot_description" command="$(arg urdf_file)" />
 
         
@@ -45,20 +62,6 @@
 </group> 
 
 
-<group ns="stroller1">
-        <arg name="attached_marker" value="0"/>
-        <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
-
-        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /stroller1 /stroller1/base_footprint 10" />
-        
-        <param name="~tf_prefix" value="stroller1" />
-        <param name="robot_description" command="$(arg urdf_file)" />
-
-        
-        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-          <param name="publish_frequency" type="double" value="5.0" />
-        </node>
-</group> 
 
 <group ns="softstroller">
         <arg name="attached_marker" value="0"/>
@@ -79,6 +82,9 @@
 
   <node pkg="marker_localization" type="marker_localization" name="marker_localization" output="screen">
     <param name="robot_config_file" value="$(find marker_localization)/param/robot_config.yaml" />
+    <remap from="robot0" to="/hyundai/initialpose"/>
+    <remap from="robot1" to="/samsung/initialpose"/>
+    <remap from="robot2" to="/mapper/initialpose"/>
   </node>
 
 </launch>
