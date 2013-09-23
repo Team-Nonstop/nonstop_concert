@@ -4,7 +4,7 @@
   <arg name="world_model_password"       value="$(optenv WORLD_MODEL_PASSWORD flcb12!)"/>
 
   <!-- Map server -->
-  <arg name="map_name" default="$(find nonstop_maps)/maps/demo_maps.yaml"/>
+  <arg name="map_name" default="$(find nonstop_maps)/maps/demo_map.yaml"/>
   <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_name)">
   </node>
 
