@@ -5,10 +5,15 @@
 name: "Nonstop Concert"
 nodes:
 
-  - id: stroller 
+  - id: hyundai 
     tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/stroller
-    min: 2
-    max: 2
+    min: 0
+    max: 1
+
+  - id: samsung 
+    tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/stroller
+    min: 0
+    max: 1
 
   - id: softstroller 
     tuple: linux.ros.turtlebot_nonstop_soft.turtlebot_nonstop_soft_rapps/turtlebot_nonstop_soft
@@ -52,19 +57,36 @@ topics:
     type: geometry_msgs/PoseStamped
 
 # stroller
-  - id: stroller_pose
+  - id: hyundai_pose
     type: geometry_msgs/PoseStamped
-  - id: stroller_map
+  - id: hyundai_map
     type: nav_msgs/OccupancyGrid
-  - id: stroller_map_metadata
+  - id: hyundai_map_metadata
     type: nav_msgs/MapMetaData
-  - id: stroller_simple_goal
+  - id: hyundai_simple_goal
     type: geometry_msgs/PoseStamped
-  - id: stroller_initialpose
+  - id: hyundai_initialpose
     type: geometry_msgs/PoseStamped
-  - id: stroller_particlecloud
+  - id: hyundai_particlecloud
     type: geometry_msgs/PoseArray
-  - id: stroller_amcl_pose
+  - id: hyundai_amcl_pose
+    type: geometry_msgs/PoseWithCovarianceStamped
+
+
+# stroller
+  - id: samsung_pose
+    type: geometry_msgs/PoseStamped
+  - id: samsung_map
+    type: nav_msgs/OccupancyGrid
+  - id: samsung_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: samsung_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: samsung_initialpose
+    type: geometry_msgs/PoseStamped
+  - id: samsung_particlecloud
+    type: geometry_msgs/PoseArray
+  - id: samsung_amcl_pose
     type: geometry_msgs/PoseWithCovarianceStamped
 
 # softstroller
@@ -82,7 +104,9 @@ topics:
     type: geometry_msgs/PoseArray
 
 actions:
-  - id: stroller_movebase
+  - id: hyundai_movebase
+    type: move_base_msgs/MoveBase
+  - id: samsung_movebase
     type: move_base_msgs/MoveBase
   - id: softstroller_movebase
     type: move_base_msgs/MoveBase
@@ -127,20 +151,37 @@ edges:
     remap_from: initialpose
     remap_to: initialpose
 
-  - start: stroller
-    finish: stroller_map
+  - start: hyundai
+    finish: hyundai_map
     remap_from: map
     remap_to: /map
-  - start: stroller
-    finish: stroller_map_metadata
+  - start: hyundai
+    finish: hyundai_map_metadata
     remap_from: map_metadata
     remap_to: /map_metadata
-  - start: stroller
-    finish: stroller_simple_goal
+  - start: hyundai
+    finish: hyundai_simple_goal
     remap_from: move_base_simple/goal
     remap_to: goal_simple
-  - start: stroller
-    finish: stroller_initialpose
+  - start: hyundai
+    finish: hyundai_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
+
+  - start: samsung
+    finish: samsung_map
+    remap_from: map
+    remap_to: /map
+  - start: samsung
+    finish: samsung_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: samsung
+    finish: samsung_simple_goal
+    remap_from: move_base_simple/goal
+    remap_to: goal_simple
+  - start: samsung
+    finish: samsung_initialpose
     remap_from: initialpose
     remap_to: initialpose
 
