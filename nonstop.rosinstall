@@ -5,32 +5,26 @@
 #
 ##############################################################################
 
-# Official Ros Stacks
-# {'setup-file': {'local-name': '/opt/ros/groovy/setup.sh'}},
-# {'other': {'local-name': '/opt/ros/groovy/share/ros'}},
-# {'other': {'local-name': '/opt/ros/groovy/share'}},
-# {'other': {'local-name': '/opt/ros/groovy/stacks'}},
-
 # Rocon packages
 - git:
-    uri: https://github.com/robotics-in-concert/rocon_concert.git
+    uri: https://github.com/Team-Nonstop/rocon_concert.git
     local-name: rocon_concert
-    version: cafe_concert 
+    version: hydro-devel 
 
 - git:
-    uri: https://github.com/robotics-in-concert/rocon_app_platform.git
+    uri: https://github.com/Team-Nonstop/rocon_app_platform.git
     local-name: rocon_app_platform
-    version: cafe_concert
+    version: hydro-devel
 
 - git:
-    uri: https://github.com/robotics-in-concert/rocon_msgs.git
+    uri: https://github.com/Team-Nonstop/rocon_msgs.git
     local-name: rocon_msgs
-    version: cafe_concert
+    version: hydro-devel
 
 - git: 
-    uri: https://github.com/robotics-in-concert/rocon_multimaster.git
+    uri: https://github.com/Team-Nonstop/rocon_multimaster.git
     local-name: rocon_multimaster
-    version: cafe_concert
+    version: hydro-devel
 
 - git:
     uri: https://github.com/Team-Nonstop/spatial_world_model.git
@@ -41,7 +35,7 @@
 - git:
     uri: https://github.com/Team-Nonstop/turtlebot.git
     local-name: turtlebot
-    version: hydro-devel
+    version: groovy
 
 # Turtlebot dependency
 - git: 
@@ -49,10 +43,20 @@
     local-name: xacro
     version: hydro-devel
 
+- git: 
+    uri: https://github.com/ros-drivers/openni_launch.git
+    local-name: openni_launch
+    version: hydro-devel
+- git: 
+    uri: https://github.com/ros-drivers/rgbd_launch.git
+    local-name: rgbd_launch
+    version: hydro-devel
+
+
 #Nonstop Robots dependency
 ## Turtlebot_Nonstop
 - git: 
-    uri: https://github.com/corot/ar_track_alvar.git
+    uri: https://github.com/Team-Nonstop/ar_track_alvar.git
     local-name: ar_track_alvar
     version: groovy-devel
 
@@ -60,6 +64,11 @@
     uri: http://github.com/Team-Nonstop/navigation.git
     local-name: navigation
     version: groovy-devel-catkinized
+
+- git:
+    uri: https://github.com/Team-Nonstop/turtlebot_apps.git
+    local-name: turtlebot_apps
+    version: groovy
 
 ## LemonaBot
 - git: 

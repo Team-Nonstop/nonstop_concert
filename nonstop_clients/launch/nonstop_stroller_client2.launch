@@ -1,0 +1,21 @@
+<launch>
+  <!-- Configuration set in environment -->
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+  <include file="$(find turtlebot_bringup)/launch/includes/kobuki/_safety_controller.launch" />
+  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+    <arg name="rgb_processing" value="false" />
+    <arg name="depth_registration" value="false" />
+    <arg name="depth_processing" value="false" />
+  </include>
+
+  <include file="$(find turtlebot_navigation)/launch/includes/_velocity_smoother.launch"/>
+  
+  <include file="$(find rocon_app_manager)/launch/concert_client.launch">
+    <arg name="robot_name" value="samsung"/>
+    <arg name="robot_type" value="turtlebot_nonstop"/>
+    <arg name="concert_name" value="nonstop_concert"/>
+    <!--<arg name="attached_marker" value="0"/>-->
+    <arg name="rapp_lists" value="nonstop_rapps/nonstop.rapps"/>
+    <arg name="gateway_watch_loop_period" value="1"/>
+  </include>
+</launch>
