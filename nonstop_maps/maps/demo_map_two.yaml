@@ -1,4 +1,4 @@
-image: nonstop/src/nonstop_concert/nonstop_maps/maps/demo_map_two.pgm
+image: demo_map_two.pgm
 resolution: 0.050000
 origin: [-51.224998, -51.224998, 0.000000]
 negate: 0
