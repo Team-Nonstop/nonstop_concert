@@ -12,7 +12,7 @@
   
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="samsung"/>
-    <arg name="robot_type" value="turtlebot_nonstop"/>
+    <arg name="robot_type" value="turtlebot"/>
     <arg name="concert_name" value="nonstop_concert"/>
     <!--<arg name="attached_marker" value="0"/>-->
     <arg name="rapp_lists" value="nonstop_rapps/nonstop.rapps"/>

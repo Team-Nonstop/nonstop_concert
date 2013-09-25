@@ -6,12 +6,12 @@ name: "Nonstop Concert"
 nodes:
 
   - id: hyundai 
-    tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/stroller
-    min: 1
+    tuple: linux.ros.turtlebot.nonstop_rapps/stroller
+    min: 0
     max: 1
 
   - id: samsung 
-    tuple: linux.ros.turtlebot_nonstop.nonstop_rapps/stroller
+    tuple: linux.ros.turtlebot.nonstop_rapps/stroller
     min: 0
     max: 1
 
