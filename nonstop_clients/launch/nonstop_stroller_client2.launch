@@ -15,7 +15,7 @@
     <arg name="robot_type" value="turtlebot"/>
     <arg name="concert_name" value="nonstop_concert"/>
     <!--<arg name="attached_marker" value="0"/>-->
-    <arg name="rapp_lists" value="turtlebot_nonstop_soft_rapps/nonstop_soft.rapps;turtlebot_bringup/turtlebot.rapps"/>
+    <arg name="rapp_lists" value="turtlebot_nonstop_soft_rapps/nonstop_soft.rapps;turtlebot_bringup/turtlebot_apps.rapps"/>
     <arg name="gateway_watch_loop_period" value="1"/>
   </include>
 </launch>
