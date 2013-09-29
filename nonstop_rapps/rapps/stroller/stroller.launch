@@ -54,7 +54,7 @@
   </node>
 
 
-  <include file="$(find turtlebot_bringup)/launch/includes/kobuki/_safety_controller.launch" />
+  <include file="$(find turtlebot_navigation)/launch/includes/_safety_controller.launch" />
   <include file="$(find turtlebot_navigation)/launch/includes/_velocity_smoother.launch"/>
 
 
