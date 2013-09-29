@@ -16,6 +16,7 @@ Demo software
 ```
 > sudo apt-get install ros-hydro-turtlebot ros-hydro-turtlebot-apps ros-hydro-turtlebot-viz ros-hydro-turtlebot-simulator
 > sudo apt-get install python-rosdep python-wstool ros-hydro-ros
+> sudo apt-get install ros-hydro-rospy-message-converter
 > sudo rosdep init
 > rosdep update
 ```
