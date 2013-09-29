@@ -7,20 +7,15 @@ nodes:
 
   - id: hyundai 
     tuple: linux.ros.turtlebot.nonstop_rapps/stroller
-    force_name_matching: true
     min: 0
     max: 1
+    force_name_matching: true
 
   - id: samsung 
     tuple: linux.ros.turtlebot.nonstop_rapps/mapper
-    force_name_matching: true
     min: 0
     max: 1
-
-  - id: softstroller 
-    tuple: linux.ros.turtlebot_nonstop_soft.turtlebot_nonstop_soft_rapps/turtlebot_nonstop_soft
-    min: 0
-    max: 3
+    force_name_matching: true
 
   - id: watcher
     tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
@@ -37,6 +32,10 @@ nodes:
 
 topics:
 # Shared Database
+  - id: nonstop_database_map
+    type: nav_msgs/OccupancyGrid
+  - id: nonstop_database_map_metadata
+    type: nav_msgs/MapMetaData
   - id: nonstop_database_site_pose_list
     type: semantic_region_handler_nonstop/SitePoseList
   - id: nonstop_database_tf
@@ -87,27 +86,16 @@ topics:
   - id: samsung_amcl_pose
     type: geometry_msgs/PoseWithCovarianceStamped
 
-# softstroller
-  - id: softstroller_pose
-    type: geometry_msgs/PoseStamped
-  - id: softstroller_map
-    type: nav_msgs/OccupancyGrid
-  - id: softstroller_map_metadata
-    type: nav_msgs/MapMetaData
-  - id: softstroller_simple_goal
-    type: geometry_msgs/PoseStamped
-  - id: softstroller_initialpose
-    type: geometry_msgs/PoseStamped
-  - id: softstroller_particlecloud
-    type: geometry_msgs/PoseArray
+
 
 actions:
   - id: hyundai_movebase
     type: move_base_msgs/MoveBase
   - id: samsung_movebase
     type: move_base_msgs/MoveBase
-  - id: softstroller_movebase
-    type: move_base_msgs/MoveBase
+
+
+
 
 edges:
 ## database
