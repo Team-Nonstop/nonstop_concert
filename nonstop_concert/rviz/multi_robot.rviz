@@ -5,11 +5,17 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /TF1
+        - /TF1/Status1
         - /TF1/Frames1
+        - /TF1/Frames1/base_footprint1
+        - /TF1/Tree1
+        - /TF1/Tree1/map1
+        - /Map1
         - /Pose1
         - /Pose2
         - /Marker1
-      Splitter Ratio: 0.598859
+      Splitter Ratio: 0.827586
     Tree Height: 538
   - Class: rviz/Selection
     Name: Selection
@@ -51,21 +57,182 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
-      Marker Scale: 0.1
+        base_footprint:
+          Value: true
+        base_link:
+          Value: true
+        bottom_plate_link:
+          Value: true
+        bottom_pole_1_link:
+          Value: true
+        bottom_pole_2_link:
+          Value: true
+        bottom_pole_3_link:
+          Value: true
+        bottom_pole_4_link:
+          Value: true
+        camera_depth_frame:
+          Value: true
+        camera_depth_optical_frame:
+          Value: true
+        camera_front:
+          Value: true
+        camera_link:
+          Value: true
+        camera_rgb_frame:
+          Value: true
+        camera_rgb_optical_frame:
+          Value: true
+        caster_back_link:
+          Value: true
+        caster_front_link:
+          Value: true
+        cliff_sensor_front_link:
+          Value: true
+        cliff_sensor_left_link:
+          Value: true
+        cliff_sensor_right_link:
+          Value: true
+        docking_30:
+          Value: true
+        gyro_link:
+          Value: true
+        hokuyo_laser_link:
+          Value: true
+        hokuyo_link:
+          Value: true
+        imu:
+          Value: true
+        laser_base_link:
+          Value: true
+        left_tire_link:
+          Value: true
+        left_wheel_link:
+          Value: true
+        map:
+          Value: true
+        marker_back_link:
+          Value: true
+        marker_backward_link:
+          Value: true
+        marker_front_link:
+          Value: true
+        marker_left_link:
+          Value: true
+        marker_right_link:
+          Value: true
+        middle_plate_link:
+          Value: true
+        middle_pole_1_link:
+          Value: true
+        middle_pole_2_link:
+          Value: true
+        middle_pole_3_link:
+          Value: true
+        middle_pole_4_link:
+          Value: true
+        plate_bottom_link:
+          Value: true
+        plate_middle_link:
+          Value: true
+        plate_top_link:
+          Value: true
+        pole_bottom_0_link:
+          Value: true
+        pole_bottom_1_link:
+          Value: true
+        pole_bottom_2_link:
+          Value: true
+        pole_bottom_3_link:
+          Value: true
+        pole_bottom_4_link:
+          Value: true
+        pole_bottom_5_link:
+          Value: true
+        pole_kinect_0_link:
+          Value: true
+        pole_kinect_1_link:
+          Value: true
+        pole_middle_0_link:
+          Value: true
+        pole_middle_1_link:
+          Value: true
+        pole_middle_2_link:
+          Value: true
+        pole_middle_3_link:
+          Value: true
+        pole_top_0_link:
+          Value: true
+        pole_top_1_link:
+          Value: true
+        pole_top_2_link:
+          Value: true
+        pole_top_3_link:
+          Value: true
+        reload_37:
+          Value: true
+        right_tire_link:
+          Value: true
+        right_wheel_link:
+          Value: true
+        site1_31:
+          Value: true
+        site2_32:
+          Value: true
+        site3_33:
+          Value: true
+        site4_34:
+          Value: true
+        site5_35:
+          Value: true
+        site6_36:
+          Value: true
+        site_23:
+          Value: true
+        top_plate_link:
+          Value: true
+        watcher:
+          Value: true
+        x_leg:
+          Value: true
+        y_leg:
+          Value: true
+      Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        map:
+          docking_30:
+            {}
+          reload_37:
+            {}
+          site1_31:
+            {}
+          site2_32:
+            {}
+          site3_33:
+            {}
+          site4_34:
+            {}
+          site5_35:
+            {}
+          site6_36:
+            {}
+          site_23:
+            {}
+          watcher:
+            {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Alpha: 0.7
       Class: rviz/Map
+      Color Scheme: map
       Draw Behind: false
       Enabled: true
       Name: Map
@@ -150,7 +317,7 @@ Visualization Manager:
       Marker Topic: /visualization_marker
       Name: Marker
       Namespaces:
-        basic_shapes: true
+        {}
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -188,53 +355,24 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_front:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        marker_back_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        marker_front_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        x_leg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        y_leg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: watcher/robot_description
       TF Prefix: watcher
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: /map
+    Fixed Frame: map
+    Frame Rate: 30
   Name: root
   Tools:
     - Class: rviz/Interact
@@ -251,17 +389,17 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.33424
+      Distance: 11.0446
       Focal Point:
-        X: 0.737697
-        Y: 1.10017
-        Z: -2.21613
+        X: 0.109058
+        Y: -0.0832305
+        Z: -2.16514
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.4998
+      Pitch: 1.4648
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.0524653
+      Yaw: 0.197466
     Saved: ~
 Window Geometry:
   Displays:
