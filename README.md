@@ -4,24 +4,39 @@
 Demo software
 
 
-## Groovy ##
+## Hydro Devel ##
 
 ### Download ###
 ```
 mkdir ~/nonstop
 cd ~/nonstop
-wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/groovy-devel/nonstop.rosinstall
+wstool init src https://raw.github.com/Team-Nonstop/nonstop_concert/hydro-devel/nonstop.rosinstall
 ```
+### Prerequisition ###
+```
+sudo apt-get install ros-hydro-turtlebot ros-hydro-turtlebot-apps ros-hydro-turtlebot-viz ros-hydro-turtlebot-simulator
+
+sudo apt-get install python-rosdep python-wstool ros-hydro-ros
+sudo rosdep init
+rosdep update
 
 
-### Prerequsition ###
 ```
-sudo apt-get install ros-groovy-robot-pose-publisher
+
+### Get Turtlebot Package ###
 ```
+> mkdir ~/nonstop/turtlebot
+> cd ~/nonstop/turtlebot
+> wstool init src https://raw.github.com/turtlebot/turtlebot/hydro-devel/turtlebot.rosinstall -j8
+> source /opt/ros/hydro/setup.bash
+> rosdep install --from-paths src -i -y
+> catkin_make
+```
+
 
 ### Compile ###
 ```
-source /opt/ros/groovy/setup.bash
+source /opt/ros/hydro/setup.bash
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/nonstop/src/
 catkin_make
 cd build; sudo make install
@@ -42,5 +57,10 @@ source ~/.bashrc
 ## Run ##
 On server side
 ```
-rocon_launch nonstop_concert server.launch
+rocon_launch nonstop_concert nonstop_real.launch
+```
+
+On turtlebot side
+```
+roslaunch nonstop_client nonstop_
 ```
