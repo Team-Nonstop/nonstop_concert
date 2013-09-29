@@ -22,7 +22,8 @@
     <!-- ********************************* rviz ********************************* -->
     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find nonstop_concert)/rviz/multi_robot.rviz"/>
   </group>
+  <!--
   <include file="$(find nonstop_concert)/launch/includes/_marker_localization.xml">
   </include>
-
+  -->
 </launch>

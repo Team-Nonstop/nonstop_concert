@@ -12,7 +12,6 @@
 
   <include file="$(find turtlebot_navigation)/launch/includes/gmapping.launch.xml"/>
 
-  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
 
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="samsung"/>
