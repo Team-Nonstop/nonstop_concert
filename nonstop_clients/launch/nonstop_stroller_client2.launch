@@ -8,7 +8,7 @@
     <arg name="depth_processing" value="false" />
   </include>
 
-<!--  <include file="$(find turtlebot_navigation)/launch/includes/_velocity_smoother.launch"/> -->
+ <include file="$(find turtlebot_navigation)/launch/includes/_velocity_smoother.launch"/>
   
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="samsung"/>
