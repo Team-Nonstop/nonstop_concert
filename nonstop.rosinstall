@@ -30,7 +30,10 @@
     uri: https://github.com/Team-Nonstop/spatial_world_model.git
     local-name: spatial_world_model
     version: groovy-devel
-
+- git:
+    uri: https://github.com/Team-Nonstop/nonstop_webnotator.git
+    local-name: nonstop_webnotator
+    version:: master
 
 
 # Turtlebot dependency

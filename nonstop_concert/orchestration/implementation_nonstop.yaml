@@ -161,12 +161,12 @@ edges:
     remap_to: /map_metadata
   - start: hyundai
     finish: hyundai_simple_goal
-    remap_from: move_base_simple/goal
+    remap_from: /move_base_simple/goal
     remap_to: goal_simple
   - start: hyundai
     finish: hyundai_initialpose
     remap_from: initialpose
-    remap_to: initialpose
+    remap_to: /initialpose
 
   - start: samsung
     finish: samsung_map
@@ -178,12 +178,12 @@ edges:
     remap_to: /map_metadata
   - start: samsung
     finish: samsung_simple_goal
-    remap_from: move_base_simple/goal
+    remap_from: /move_base_simple/goal
     remap_to: goal_simple
   - start: samsung
     finish: samsung_initialpose
     remap_from: initialpose
-    remap_to: initialpose
+    remap_to: /initialpose
 
   - start: softstroller
     finish: softstroller_map

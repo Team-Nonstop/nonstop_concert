@@ -1,29 +1,22 @@
 <launch>
 <group ns="watcher">
       <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find coldeyes_description)/robots/coldeyes_marker.urdf.xacro'" />
+      <param name="~tf_prefix" value="watcher" />
       <param name="robot_description" command="$(arg urdf_file)" />
-
-        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /watcher /watcher/base_link 10" />
-        
-        <param name="~tf_prefix" value="watcher" />
-        <param name="robot_description" command="$(arg urdf_file)" />
-
         
         <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
           <param name="publish_frequency" type="double" value="5.0" />
+          <param name="tf_prefix" value="watcher" />
         </node>
+
+
 </group> 
 
 <group ns="mapper">
       <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find lemonabot_description)/robots/lemonabot_with_marker_mapper.urdf.xacro'" />
+      <param name="~tf_prefix" value="mapper" />
       <param name="robot_description" command="$(arg urdf_file)" />
-
-        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /mapper /mapper/base_link 10" />
-        
-        <param name="~tf_prefix" value="mapper" />
-        <param name="robot_description" command="$(arg urdf_file)" />
-
-        
+       
         <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
           <param name="publish_frequency" type="double" value="5.0" />
         </node>
@@ -34,48 +27,27 @@
 <group ns="hyundai">
         <arg name="attached_marker" value="0"/>
         <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
+          <param name="~tf_prefix" value="hyundai" />
+      <param name="robot_description" command="$(arg urdf_file)" />
 
-        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /hyundai_m /hyundai/base_footprint 10" />
-        
-        <param name="~tf_prefix" value="hyundai" />
-        <param name="robot_description" command="$(arg urdf_file)" />
-
-        
         <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
           <param name="publish_frequency" type="double" value="5.0" />
+          <param name="~tf_prefix" value="hyundai" />
         </node>
+
 </group> 
 
 <group ns="samsung">
         <arg name="attached_marker" value="1"/>
         <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
-
-        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /samsung_m /samsung/base_footprint 10" />
-        
         <param name="~tf_prefix" value="samsung" />
-        <param name="robot_description" command="$(arg urdf_file)" />
-
+      <param name="robot_description" command="$(arg urdf_file)" />
         
         <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+          <param name="~tf_prefix" value="samsung" />
           <param name="publish_frequency" type="double" value="5.0" />
         </node>
-</group> 
 
-
-
-<group ns="softstroller">
-        <arg name="attached_marker" value="0"/>
-        <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_nonstop_description)/robots/kobuki_hexagons_kinect_Marker_$(arg attached_marker).urdf.xacro'" />
-
-        <node pkg="tf" type="static_transform_publisher" name="base_ref" args="0 0 0 0 0 0 /softstroller /softstroller/base_footprint 10" />
-        
-        <param name="~tf_prefix" value="softstroller" />
-        <param name="robot_description" command="$(arg urdf_file)" />
-
-        
-        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-          <param name="publish_frequency" type="double" value="5.0" />
-        </node>
 </group> 
 
 
