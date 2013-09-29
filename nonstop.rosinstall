@@ -31,11 +31,7 @@
     local-name: spatial_world_model
     version: groovy-devel
 
-# Catkinized packages
-- git:
-    uri: https://github.com/turtlebot/turtlebot.git
-    local-name: turtlebot
-    version: hydro-devel
+
 
 # Turtlebot dependency
 - git: 
@@ -59,16 +55,6 @@
     uri: https://github.com/Team-Nonstop/ar_track_alvar.git
     local-name: ar_track_alvar
     version: groovy-devel
-
-- git:
-    uri: https://github.com/ros-planning/navigation.git
-    local-name: navigation
-    version: hydro-devel
-
-- git:
-    uri: https://github.com/turtlebot/turtlebot_apps.git
-    local-name: turtlebot_apps
-    version: hydro-devel
 
 ## LemonaBot
 - git: 
