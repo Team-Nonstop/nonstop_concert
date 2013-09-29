@@ -52,9 +52,9 @@
 #Nonstop Robots dependency
 ## Turtlebot_Nonstop
 - git: 
-    uri: https://github.com/Team-Nonstop/ar_track_alvar.git
+    uri: https://github.com/sniekum/ar_track_alvar.git
     local-name: ar_track_alvar
-    version: groovy-devel
+    version: hydro-devel
 
 ## LemonaBot
 - git: 
