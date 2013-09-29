@@ -61,9 +61,9 @@
     version: groovy-devel
 
 - git:
-    uri: http://github.com/Team-Nonstop/navigation.git
+    uri: https://github.com/ros-planning/navigation.git
     local-name: navigation
-    version: groovy-devel-catkinized
+    version: hydro-devel
 
 - git:
     uri: https://github.com/turtlebot/turtlebot_apps.git
