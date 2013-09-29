@@ -54,8 +54,8 @@
   </node>
 
 
-  <include file="$(find turtlebot_navigation)/launch/includes/_safety_controller.launch.xml" />
-  <include file="$(find turtlebot_navigation)/launch/includes/_velocity_smoother.launch.xml"/>
+  <include file="$(find turtlebot_navigation)/launch/includes/safety_controller.launch.xml" />
+  <include file="$(find turtlebot_navigation)/launch/includes/velocity_smoother.launch.xml"/>
 
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
