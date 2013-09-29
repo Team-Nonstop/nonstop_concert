@@ -4,9 +4,11 @@
   <arg name="world_model_password"       value="$(optenv WORLD_MODEL_PASSWORD flcb12!)"/>
  
   <!-- Map server -->
-  <arg name="map_name" default="$(find nonstop_maps)/maps/demo_map_two.yaml"/>
+  <!--
+  <arg name="map_name" default="$(find nonstop_maps)/maps/A304_demo.yaml"/>
   <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_name)">
   </node>
+-->
 
   <include file="$(find semantic_region_handler_nonstop)/launch/database_handler.launch">
     <arg name="host" value="$(arg world_model_host)"/>

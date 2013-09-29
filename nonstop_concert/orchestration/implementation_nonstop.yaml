@@ -7,11 +7,13 @@ nodes:
 
   - id: hyundai 
     tuple: linux.ros.turtlebot.nonstop_rapps/stroller
+    force_name_matching: true
     min: 0
     max: 1
 
   - id: samsung 
-    tuple: linux.ros.turtlebot.nonstop_rapps/stroller
+    tuple: linux.ros.turtlebot.nonstop_rapps/mapper
+    force_name_matching: true
     min: 0
     max: 1
 
@@ -35,10 +37,6 @@ nodes:
 
 topics:
 # Shared Database
-  - id: nonstop_database_map
-    type: nav_msgs/OccupancyGrid
-  - id: nonstop_database_map_metadata
-    type: nav_msgs/MapMetaData
   - id: nonstop_database_site_pose_list
     type: semantic_region_handler_nonstop/SitePoseList
   - id: nonstop_database_tf
@@ -184,20 +182,3 @@ edges:
     finish: samsung_initialpose
     remap_from: initialpose
     remap_to: /initialpose
-
-  - start: softstroller
-    finish: softstroller_map
-    remap_from: map
-    remap_to: /map
-  - start: softstroller
-    finish: softstroller_map_metadata
-    remap_from: map_metadata
-    remap_to: /map_metadata
-  - start: softstroller
-    finish: softstroller_simple_goal
-    remap_from: move_base_simple/goal
-    remap_to: goal_simple
-  - start: softstroller
-    finish: softstroller_initialpose
-    remap_from: initialpose
-    remap_to: initialpose

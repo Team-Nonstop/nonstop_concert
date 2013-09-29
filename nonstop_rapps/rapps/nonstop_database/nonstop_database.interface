@@ -1,7 +1,7 @@
-subscribers: []
-publishers:
+subscribers: 
   - map
   - map_metadata
+publishers:
   - semantic_map/site_pose_list
   - tf
 services:
