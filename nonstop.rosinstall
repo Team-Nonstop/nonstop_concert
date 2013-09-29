@@ -46,11 +46,6 @@
     local-name: ar_track_alvar
     version: groovy-devel
 
-- git:
-    uri: https://github.com/ros-planning/navigation.git
-    local-name: navigation
-    version: hydro-devel
-
 ## LemonaBot
 - git: 
     uri: https://github.com/Team-Nonstop/cereal_port.git
