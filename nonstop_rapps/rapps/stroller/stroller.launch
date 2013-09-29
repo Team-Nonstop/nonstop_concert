@@ -1,14 +1,15 @@
 <launch>
-  
+  <!--
   <arg name="map_name" default="$(find nonstop_maps)/maps/demo_map_two.yaml"/>
   <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_name)">
   </node>
-  
+  -->
   <arg name="use_map_topic" default="false"/>
   <arg name="scan_topic" default="/scan"/>
   <arg name="initial_pose_x" default="0.0"/>
   <arg name="initial_pose_y" default="0.0"/>
   <arg name="initial_pose_a" default="0.0"/>
+
 
   <node pkg="amcl" type="amcl" name="amcl">
     <param name="use_map_topic" value="$(arg use_map_topic)"/>
