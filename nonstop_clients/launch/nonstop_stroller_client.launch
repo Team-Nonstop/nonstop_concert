@@ -24,7 +24,10 @@
     <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
     <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
   </include>
- 
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="odom_topic" value="/odom"/>
+  </include>
+   
   <include file="$(find rocon_app_manager)/launch/concert_client.launch">
     <arg name="robot_name" value="hyundai"/>
     <arg name="robot_type" value="turtlebot"/>
