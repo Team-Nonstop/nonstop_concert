@@ -25,12 +25,12 @@ rosdep update
 
 ### Get Turtlebot Package ###
 ```
-> mkdir ~/nonstop/turtlebot
-> cd ~/nonstop/turtlebot
+> mkdir ~/nonstop/src/turtlebot
+> cd ~/nonstop/src/turtlebot
 > wstool init src https://raw.github.com/turtlebot/turtlebot/hydro-devel/turtlebot.rosinstall -j8
 > source /opt/ros/hydro/setup.bash
 > rosdep install --from-paths src -i -y
-> catkin_make
+> cd ~/nonstop;catkin_make
 ```
 
 
