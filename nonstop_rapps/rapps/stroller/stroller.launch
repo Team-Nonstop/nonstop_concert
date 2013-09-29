@@ -1,8 +1,9 @@
 <launch>
+  <!--
   <arg name="map_name" default="$(find nonstop_maps)/maps/demo_map_two.yaml"/>
   <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_name)">
   </node>
-  
+  -->
   <arg name="use_map_topic" default="false"/>
   <arg name="scan_topic" default="/scan"/>
   <arg name="initial_pose_x" default="0.0"/>
@@ -69,7 +70,7 @@
   <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher">
     <rosparam>
       is_stamped: true
-      base_frame: base_link
+      base_frame: base_footprint
     </rosparam>
   </node>
 </launch>

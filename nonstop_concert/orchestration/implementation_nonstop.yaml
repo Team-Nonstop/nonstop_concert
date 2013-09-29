@@ -56,7 +56,7 @@ topics:
   - id: watcher_initialpose
     type: geometry_msgs/PoseStamped
 
-# stroller
+# hyundai
   - id: hyundai_pose
     type: geometry_msgs/PoseStamped
   - id: hyundai_map
@@ -73,7 +73,7 @@ topics:
     type: geometry_msgs/PoseWithCovarianceStamped
 
 
-# stroller
+# samsung
   - id: samsung_pose
     type: geometry_msgs/PoseStamped
   - id: samsung_map
