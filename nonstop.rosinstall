@@ -2,14 +2,110 @@
 #
 # Source installation instructions at:
 #
-# http://www.ros.org/wiki/turtlebot/Tutorials/hydro/Source%20Installation
 #
 ##############################################################################
 
-
-# Nonstop stacks
+# Rocon packages
+- git:
+    uri: https://github.com/robotics-in-concert/rocon_concert.git
+    local-name: rocon_concert
+    version: hydro-devel 
 
 - git:
-    uri: https://github.com/theRichu/nonstop_concert.git
+    uri: https://github.com/robotics-in-concert/rocon_app_platform.git
+    local-name: rocon_app_platform
+    version: hydro-devel
+
+- git:
+    uri: https://github.com/robotics-in-concert/rocon_msgs.git
+    local-name: rocon_msgs
+    version: hydro-devel
+
+- git: 
+    uri: https://github.com/robotics-in-concert/rocon_multimaster.git
+    local-name: rocon_multimaster
+    version: hydro-devel
+
+- git:
+    uri: https://github.com/Team-Nonstop/spatial_world_model.git
+    local-name: spatial_world_model
+    version: groovy-devel
+
+# Catkinized packages
+- git:
+    uri: https://github.com/turtlebot/turtlebot.git
+    local-name: turtlebot
+    version: hydro-devel
+
+# Turtlebot dependency
+- git: 
+    uri: https://github.com/ros/xacro.git
+    local-name: xacro
+    version: hydro-devel
+
+- git: 
+    uri: https://github.com/ros-drivers/openni_launch.git
+    local-name: openni_launch
+    version: hydro-devel
+- git: 
+    uri: https://github.com/ros-drivers/rgbd_launch.git
+    local-name: rgbd_launch
+    version: hydro-devel
+
+
+#Nonstop Robots dependency
+## Turtlebot_Nonstop
+- git: 
+    uri: https://github.com/Team-Nonstop/ar_track_alvar.git
+    local-name: ar_track_alvar
+    version: groovy-devel
+
+- git:
+    uri: http://github.com/Team-Nonstop/navigation.git
+    local-name: navigation
+    version: groovy-devel-catkinized
+
+- git:
+    uri: https://github.com/turtlebot/turtlebot_apps.git
+    local-name: turtlebot_apps
+    version: hydro-devel
+
+## LemonaBot
+- git: 
+    uri: https://github.com/Team-Nonstop/cereal_port.git
+    local-name: cereal_port
+    version: groovy-devel
+
+## Coldeyes
+- git:
+    uri: https://github.com/Team-Nonstop/camera_umd.git
+    local-name: camara_umd
+    version: master
+
+# Robots Stack for Nonstop Concert
+- git:
+   uri: https://github.com/Team-Nonstop/nonstop_robots.git
+   local-name: nonstop_robots
+   version: hydro-devel
+
+# Nonstop-Concert dependency
+- git:
+   uri: https://github.com/Team-Nonstop/marker_localization.git
+   local-name: marker_localization
+   version: hydro-devel
+
+# Nonstop-Concert stacks
+- git:
+    uri: https://github.com/Team-Nonstop/nonstop_concert.git
     local-name: nonstop_concert
+    version: hydro-devel
+
+- git:
+    uri: https://github.com/Team-Nonstop/nonstop_database.git
+    local-name: nonstop_database
+    version: hydro-devel
+
+- git:
+    uri: https://github.com/Team-Nonstop/nonstop_taskcoordinator.git
+    local-name: nonstop_taskcoordinator
     version: hydro-devel
