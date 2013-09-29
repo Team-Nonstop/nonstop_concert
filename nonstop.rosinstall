@@ -33,7 +33,7 @@
 - git:
     uri: https://github.com/Team-Nonstop/nonstop_webnotator.git
     local-name: nonstop_webnotator
-    version:: master
+    version: master
 
 
 # Turtlebot dependency
