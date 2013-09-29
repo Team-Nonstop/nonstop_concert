@@ -1,0 +1,93 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               # Concert client tuples are of the platform-system-robot-name-app where
+# the name is just a placemarker for the eventual concert client name.
+# All other parts of the tuple are fixed.
+
+name: "Nonstop Mapping Concert"
+nodes:
+
+  - id: mapper 
+    tuple: linux.ros.lemonabot.nonstop_rapps/mapper
+    min: 1
+    max: 1
+
+  - id: watcher
+    tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
+    min: 0
+    max: 1
+#    force_name_matching: true
+
+topics:
+
+# watcher
+  - id: watcher_pose
+    type: geometry_msgs/PoseStamped
+  - id: watcher_map
+    type: nav_msgs/OccupancyGrid
+  - id: watcher_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: watcher_visualization_marker
+    type: visualization_msgs/Marker
+  - id: watcher_initialpose
+    type: geometry_msgs/PoseStamped
+
+# mapper
+  - id: mapper_pose
+    type: geometry_msgs/PoseStamped
+  - id: mapper_map
+    type: nav_msgs/OccupancyGrid
+  - id: mapper_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: mapper_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: mapper_initialpose
+    type: geometry_msgs/PoseStamped
+  - id: mapper_particlecloud
+    type: geometry_msgs/PoseArray
+  - id: mapper_amcl_pose
+    type: geometry_msgs/PoseWithCovarianceStamped
+
+actions:
+  - id: mapper_movebase
+    type: move_base_msgs/MoveBase
+
+edges:
+
+  - start: watcher
+    finish: watcher_map
+    remap_from: map
+    remap_to: /map
+  - start: watcher
+    finish: watcher_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: watcher
+    finish: watcher_visualization_marker
+    remap_from: visualization_marker
+    remap_to: /visualization_marker
+  - start: watcher
+    finish: watcher_front
+    remap_from: front/image_raw
+    remap_to: front/image_raw
+  - start: watcher
+    finish: watcher_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
+
+
+  - start: mapper
+    finish: mapper_map
+    remap_from: map
+    remap_to: /map
+  - start: mapper
+    finish: mapper_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: mapper
+    finish: mapper_simple_goal
+    remap_from: move_base_simple/goal
+    remap_to: goal_simple
+  - start: mapper
+    finish: mapper_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
+

@@ -1,0 +1,10 @@
+subscribers: []
+publishers:
+  - list_mission
+services: []
+action_clients: 
+  - gunbot_1/operational_mission
+  - gunbot_2/operational_mission
+  - gunbot_3/operational_mission
+action_servers: 
+  - send_mission

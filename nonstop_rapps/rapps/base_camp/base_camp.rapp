@@ -1,0 +1,6 @@
+disply: Nonstop Basecamp
+description: Basecamp
+platform: linux.ros.pc
+launch: nonstop_rapps/base_camp.launch
+interface: nonstop_rapps/base_camp.interface
+

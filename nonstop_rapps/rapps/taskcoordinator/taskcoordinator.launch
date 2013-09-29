@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="task_manager" name="nonstop_taskcoordinator" type="nonstop_manager.py" output="screen">
+    <rosparam>
+      robot_num: 3
+    </rosparam>
+  </node>
+</launch>

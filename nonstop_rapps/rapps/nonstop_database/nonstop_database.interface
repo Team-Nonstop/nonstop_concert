@@ -1,0 +1,14 @@
+subscribers: []
+publishers:
+  - map
+  - map_metadata
+  - semantic_map/site_pose_list
+  - tf
+services:
+  - add_site_region
+action_clients: 
+  - spatial_world_model/get_world_object_description
+  - spatial_world_model/world_object_instance_tag_search
+
+
+action_servers: []

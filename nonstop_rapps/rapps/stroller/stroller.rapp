@@ -1,0 +1,5 @@
+display: stroller
+description: The turtlebot navigate 
+platform: linux.ros.turtlebot
+launch: nonstop_rapps/stroller.launch
+interface: nonstop_rapps/stroller.interface

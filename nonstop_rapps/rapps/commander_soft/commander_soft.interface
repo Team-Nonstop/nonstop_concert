@@ -1,0 +1,6 @@
+subscribers: []
+publishers: []
+services: []
+action_clients: 
+  - send_mission
+action_servers: []

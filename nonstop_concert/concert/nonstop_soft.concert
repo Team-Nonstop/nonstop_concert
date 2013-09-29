@@ -1,0 +1,8 @@
+<concert>
+  <launch package="nonstop_concert" name="nonstop_concert.launch" port="11313" />
+  <launch package="nonstop_clients" name="nonstop_database_client.launch" port="11314" />
+  <launch package="nonstop_clients" name="nonstop_watcher_client.launch" port="11315" />
+  <launch package="nonstop_clients" name="nonstop_stroller_soft_client.launch" port="11316"/>
+  <launch package="nonstop_clients" name="nonstop_stroller_soft_client2.launch" port="11317"/>
+  <launch package="nonstop_clients" name="nonstop_stroller_soft_client3.launch" port="11318"/>
+</concert>

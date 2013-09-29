@@ -1,0 +1,11 @@
+subscribers: 
+  - move_base_simple/goal
+  - initialpose
+publishers: 
+  - robot_pose
+  - map
+  - map_metadata
+services: []
+action_clients: []
+action_servers:
+  - move_base

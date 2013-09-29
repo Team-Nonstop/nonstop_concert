@@ -1,0 +1,163 @@
+# Concert client tuples are of the platform-system-robot-name-app where
+# the name is just a placemarker for the eventual concert client name.
+# All other parts of the tuple are fixed.
+
+name: "Nonstop Concert"
+nodes:
+  - id: nonstop_database
+    tuple: linux.ros.database.nonstop_rapps/nonstop_database
+    min: 1
+    max: 1
+    force_name_matching: true
+  - id: nonstop_taskcoordinator
+    tuple: linux.ros.pc.nonstop_rapps/taskcoordinator
+    min: 1
+    max: 1
+    force_name_matching: true
+  - id: base_camp
+    tuple: linux.ros.pc.nonstop_rapps/base_camp
+    min: 1
+    max: 1
+    force_name_matching: true
+  - id: commander
+    tuple: *.*.*.MissionDrinks
+    min: 0
+  - id: sniperbot
+    tuple: linux.ros.turtlebot.nonstop_rapps/sniperbot
+    min: 1
+    max: 3
+
+topics:
+## Cafe database - Waiterbot
+  - id: nonstop_database_sniperbot_map
+    type: nav_msgs/OccupancyGrid
+  - id: nonstop_database_sniperbot_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: nonstop_database_sniperbot_site_pose_list
+    type: semantic_region_handler_nonstop/SitePoseList
+  - id: nonstop_database_sniperbot_marker_pose_list
+    type: ar_track_alvar/AlvarMarkers
+
+## Task Coordinator - Kitchen Manager
+  - id: taskcoordinator_base_camp_list_mission
+    type: nonstop_msgs/MissionList
+
+## Visualization topics in workspace
+ # Waiterbot1
+  - id: sniperbot_pose 
+    type: geometry_msgs/PoseStamped
+## Waiterbot2
+ - id: sniperbot2_pose 
+   type: geometry_msgs/PoseStamped
+## Waiterbot3
+ - id: sniperbot3_pose 
+   type: geometry_msgs/PoseStamped
+ # Cafe database
+  - id: nonstop_database_site_marker
+    type: visualization_msgs/MarkerArray
+  - id: nonstop_database_ar_marker
+    type: visualization_msgs/MarkerArray
+  - id: nonstop_database_tf
+    type: tf/tfMessage 
+
+
+actions:
+## Task Coordinator - User Device
+  - id: taskcoordinator_commander_send_mission
+    type: nonstop_msgs/UserMission
+
+## Task Coordinator - Waiterbot
+  - id: taskcoordinator_sniperbot_operational_mission
+    type: nonstop_msgs/OperationalMission
+
+edges:
+## Cafe database
+  - start: nonstop_database
+    finish: nonstop_database_sniperbot_map 
+    remap_from: map
+    remap_to: /map
+  - start: nonstop_database
+    finish: nonstop_database_sniperbot_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: nonstop_database
+    finish: nonstop_database_sniperbot_site_pose_list
+    remap_from: site_pose_list
+    remap_to: /nonstop_database/site_pose_list
+  - start: nonstop_database
+    finish: nonstop_database_sniperbot_marker_pose_list
+    remap_from: marker_pose_list 
+    remap_to: /nonstop_database/marker_pose_list
+  - start: nonstop_database
+    finish: nonstop_database_site_marker
+    remap_from: site_marker
+    remap_to: /nonstop_database/site_marker
+  - start: nonstop_database
+    finish: nonstop_database_ar_marker
+    remap_from: viz_ar_list
+    remap_to: /nonstop_database/ar_list
+  - start: nonstop_database
+    finish: nonstop_database_tf
+    remap_from: tf
+    remap_to: /tf 
+
+## Cafe Customer
+  - start: commander 
+    finish: taskcoordinator_commander_send_mission
+    remap_from: send_mission
+    remap_to: /nonstop_taskcoordinator/send_mission
+
+## Task Coordinator
+  - start: taskcoordinator_sniperbot_operational_mission
+    finish: nonstop_taskcoordinator
+    remap_from: sniperbot_1/operational_mission
+    remap_to: /sniperbot/operational_mission
+  - start: taskcoordinator_sniperbot2_operational_mission
+    finish: nonstop_taskcoordinator
+    remap_from: sniperbot_2/operational_mission
+    remap_to: /sniperbot1/operational_mission
+  - start: taskcoordinator_sniperbot3_operational_mission
+    finish: nonstop_taskcoordinator
+    remap_from: sniperbot_3/operational_mission
+    remap_to: /sniperbot2/operational_mission
+
+  - start:  nonstop_taskcoordinator
+    finish: taskcoordinator_commander_send_mission
+    remap_from: send_mission
+    remap_to: /nonstop_taskcoordinator/send_mission
+  - start: nonstop_taskcoordinator
+    finish: taskcoordinator_base_camp_list_mission
+    remap_from: list_mission
+    remap_to: /list_mission
+
+## Kitchen Manager
+  - start: taskcoordinator_base_camp_list_mission
+    finish: base_camp
+    remap_from: list_mission
+    remap_to: /list_mission
+
+## Waiter
+  - start: nonstop_database_sniperbot_map
+    finish: sniperbot
+    remap_from: map
+    remap_to: /map
+  - start: nonstop_database_sniperbot_map_metadata
+    finish: sniperbot
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: nonstop_database_sniperbot_site_pose_list
+    finish: sniperbot
+    remap_from: site_pose_list
+    remap_to: /nonstop_database/site_pose_list
+  - start: nonstop_database_sniperbot_marker_pose_list
+    finish: sniperbot
+    remap_from: marker_pose_list 
+    remap_to: /nonstop_database/marker_pose_list
+  - start: sniperbot
+    finish: taskcoordinator_sniperbot_operational_mission
+    remap_from: operational_mission
+    remap_to: operational_mission
+  - start: sniperbot
+    finish: sniperbot_pose
+    remap_from: robot_pose
+    remap_to: robot_pose

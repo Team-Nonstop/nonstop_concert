@@ -1,0 +1,8 @@
+<concert>
+  <launch package="nonstop_concert" name="concert_hermes_real.launch" port="11311" />
+  <launch package="nonstop_concert_clients" name="hermes_manager_client.launch" port="11312" />
+  <launch package="nonstop_concert_clients" name="hermes_basecamp_client.launch" port="11313" />
+<!--  <launch package="nonstop_concert_clients" name="nonstop_customer_client.launch" port="11313" />-->
+  <launch package="nonstop_concert_clients" name="hermes_database_client.launch" port="11314" />
+<!--  <launch package="nonstop_concert_clients" name="waiter_realclient.launch" port="11316" />-->
+</concert>

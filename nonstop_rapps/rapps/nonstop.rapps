@@ -1,0 +1,4 @@
+apps:
+  - nonstop_rapps/nonstop_database
+  - nonstop_rapps/mapper
+  - nonstop_rapps/stroller

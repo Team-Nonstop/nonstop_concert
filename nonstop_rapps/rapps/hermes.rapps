@@ -1,0 +1,9 @@
+apps:
+  - nonstop_rapps/annotation
+  - nonstop_rapps/multi_commander_soft
+  - nonstop_rapps/commander_soft
+  - nonstop_rapps/nonstop_database
+  - nonstop_rapps/taskcoordinator
+  - nonstop_rapps/gunbot_soft
+  - nonstop_rapps/gunbot
+  - nonstop_rapps/base_camp

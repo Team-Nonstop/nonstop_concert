@@ -1,0 +1,5 @@
+display: Mapper
+description: The mapping robot
+platform: linux.ros.lemonabot
+launch: nonstop_rapps/mapper.launch
+interface: nonstop_rapps/mapper.interface

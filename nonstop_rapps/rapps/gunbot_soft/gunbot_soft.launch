@@ -1,0 +1,12 @@
+<launch>
+  <!--<node pkg="delivery_robot" name="waiterbot" type="waiter_soft.py" output="screen"/>-->
+  <node pkg="gun_robot" name="gunbot_1" type="gunbot_soft.py" output="screen"/>
+
+  <include file="$(find turtlebot_nonstop_softapps)/launch/nav.launch"/>
+  <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher">
+    <rosparam>
+      is_stamped: true
+      base_frame: base_footprint
+    </rosparam>
+  </node>
+</launch>

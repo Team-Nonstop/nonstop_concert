@@ -1,0 +1,20 @@
+<launch>
+  <arg name="world_model_host"       value="$(optenv WORLD_MODEL_HOST localhost)"/>
+  <arg name="world_model_username"       value="$(optenv WORLD_MODEL_USERNAME richu)"/>
+  <arg name="world_model_password"       value="$(optenv WORLD_MODEL_PASSWORD flcb12!)"/>
+ 
+  <!-- Map server -->
+  <arg name="map_name" default="$(find nonstop_maps)/maps/demo_map_two.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_name)">
+  </node>
+
+  <include file="$(find semantic_region_handler_nonstop)/launch/database_handler.launch">
+    <arg name="host" value="$(arg world_model_host)"/>
+    <arg name="user" value="$(arg world_model_username)"/>
+    <arg name="password" value="$(arg world_model_password)"/>
+  </include>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+    <arg name="port" value="9091" />
+  </include>
+
+</launch>

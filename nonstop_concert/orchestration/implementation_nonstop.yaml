@@ -1,0 +1,203 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               # Concert client tuples are of the platform-system-robot-name-app where
+# the name is just a placemarker for the eventual concert client name.
+# All other parts of the tuple are fixed.
+
+name: "Nonstop Concert"
+nodes:
+
+  - id: hyundai 
+    tuple: linux.ros.turtlebot.nonstop_rapps/stroller
+    min: 0
+    max: 1
+
+  - id: samsung 
+    tuple: linux.ros.turtlebot.nonstop_rapps/stroller
+    min: 0
+    max: 1
+
+  - id: softstroller 
+    tuple: linux.ros.turtlebot_nonstop_soft.turtlebot_nonstop_soft_rapps/turtlebot_nonstop_soft
+    min: 0
+    max: 3
+
+  - id: watcher
+    tuple: linux.ros.coldeyes.coldeyes_rapps/coldeyes
+    min: 0
+    max: 1
+#    force_name_matching: true
+
+  - id: nonstop_database
+    tuple: linux.ros.pc.nonstop_rapps/nonstop_database
+    min: 1
+    max: 1
+#    force_name_matching: true
+
+
+topics:
+# Shared Database
+  - id: nonstop_database_map
+    type: nav_msgs/OccupancyGrid
+  - id: nonstop_database_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: nonstop_database_site_pose_list
+    type: semantic_region_handler_nonstop/SitePoseList
+  - id: nonstop_database_tf
+    type: tf/tfMessage 
+
+# watcher
+  - id: watcher_pose
+    type: geometry_msgs/PoseStamped
+  - id: watcher_map
+    type: nav_msgs/OccupancyGrid
+  - id: watcher_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: watcher_visualization_marker
+    type: visualization_msgs/Marker
+  - id: watcher_initialpose
+    type: geometry_msgs/PoseStamped
+
+# hyundai
+  - id: hyundai_pose
+    type: geometry_msgs/PoseStamped
+  - id: hyundai_map
+    type: nav_msgs/OccupancyGrid
+  - id: hyundai_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: hyundai_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: hyundai_initialpose
+    type: geometry_msgs/PoseStamped
+  - id: hyundai_particlecloud
+    type: geometry_msgs/PoseArray
+  - id: hyundai_amcl_pose
+    type: geometry_msgs/PoseWithCovarianceStamped
+
+
+# samsung
+  - id: samsung_pose
+    type: geometry_msgs/PoseStamped
+  - id: samsung_map
+    type: nav_msgs/OccupancyGrid
+  - id: samsung_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: samsung_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: samsung_initialpose
+    type: geometry_msgs/PoseStamped
+  - id: samsung_particlecloud
+    type: geometry_msgs/PoseArray
+  - id: samsung_amcl_pose
+    type: geometry_msgs/PoseWithCovarianceStamped
+
+# softstroller
+  - id: softstroller_pose
+    type: geometry_msgs/PoseStamped
+  - id: softstroller_map
+    type: nav_msgs/OccupancyGrid
+  - id: softstroller_map_metadata
+    type: nav_msgs/MapMetaData
+  - id: softstroller_simple_goal
+    type: geometry_msgs/PoseStamped
+  - id: softstroller_initialpose
+    type: geometry_msgs/PoseStamped
+  - id: softstroller_particlecloud
+    type: geometry_msgs/PoseArray
+
+actions:
+  - id: hyundai_movebase
+    type: move_base_msgs/MoveBase
+  - id: samsung_movebase
+    type: move_base_msgs/MoveBase
+  - id: softstroller_movebase
+    type: move_base_msgs/MoveBase
+
+edges:
+## database
+  - start: nonstop_database
+    finish: nonstop_database_map 
+    remap_from: map
+    remap_to: /map
+  - start: nonstop_database
+    finish: nonstop_database_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: nonstop_database
+    finish: nonstop_database_site_pose_list
+    remap_from: site_pose_list
+    remap_to: /nonstop_database/site_pose_list
+  - start: nonstop_database
+    finish: nonstop_database_tf
+    remap_from: tf
+    remap_to: /tf 
+
+  - start: watcher
+    finish: watcher_map
+    remap_from: map
+    remap_to: /map
+  - start: watcher
+    finish: watcher_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: watcher
+    finish: watcher_visualization_marker
+    remap_from: visualization_marker
+    remap_to: /visualization_marker
+  - start: watcher
+    finish: watcher_front
+    remap_from: front/image_raw
+    remap_to: front/image_raw
+  - start: watcher
+    finish: watcher_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
+
+  - start: hyundai
+    finish: hyundai_map
+    remap_from: map
+    remap_to: /map
+  - start: hyundai
+    finish: hyundai_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: hyundai
+    finish: hyundai_simple_goal
+    remap_from: move_base_simple/goal
+    remap_to: goal_simple
+  - start: hyundai
+    finish: hyundai_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
+
+  - start: samsung
+    finish: samsung_map
+    remap_from: map
+    remap_to: /map
+  - start: samsung
+    finish: samsung_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: samsung
+    finish: samsung_simple_goal
+    remap_from: move_base_simple/goal
+    remap_to: goal_simple
+  - start: samsung
+    finish: samsung_initialpose
+    remap_from: initialpose
+    remap_to: initialpose
+
+  - start: softstroller
+    finish: softstroller_map
+    remap_from: map
+    remap_to: /map
+  - start: softstroller
+    finish: softstroller_map_metadata
+    remap_from: map_metadata
+    remap_to: /map_metadata
+  - start: softstroller
+    finish: softstroller_simple_goal
+    remap_from: move_base_simple/goal
+    remap_to: goal_simple
+  - start: softstroller
+    finish: softstroller_initialpose
+    remap_from: initialpose
+    remap_to: initialpose

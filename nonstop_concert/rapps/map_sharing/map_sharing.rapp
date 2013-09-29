@@ -1,5 +1,0 @@
-display: Shared map Database
-description: Provides shared map for the given environment 
-platform: linux.ros.*
-launch:     nonstop_concert/map_sharing.launch
-interface:  nonstop_concert/map_sharing.interface

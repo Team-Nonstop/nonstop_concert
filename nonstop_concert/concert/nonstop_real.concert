@@ -1,0 +1,5 @@
+<concert>
+  <launch package="nonstop_concert" name="nonstop_concert.launch" port="11313" />
+  <launch package="nonstop_clients" name="nonstop_database_client.launch" port="11314" />
+  <launch package="nonstop_clients" name="nonstop_watcher_client.launch" port="11315" />
+</concert>
