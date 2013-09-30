@@ -12,7 +12,6 @@
     <arg name="scan_topic" value="/scan" />
   </include>
 
-
   <!-- Map server -->
   <!--
   <arg name="map_file" default="$(find nonstop_maps)/maps/demo_map_two.yaml"/>
