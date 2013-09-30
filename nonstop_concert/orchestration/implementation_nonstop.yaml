@@ -6,7 +6,7 @@ name: "Nonstop Concert"
 nodes:
 
   - id: hyundai 
-    tuple: linux.ros.turtlebot.nonstop_rapps/stroller
+    tuple: linux.ros.turtlebot.nonstop_rapps/mapper
     min: 1
     max: 1
     force_name_matching: true
